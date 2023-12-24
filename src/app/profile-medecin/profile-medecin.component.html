@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Profile</h5>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Nom Prénom : {{ medecin.nom }} {{ medecin.prenom }}</li>
+              <li class="list-group-item">Age : {{ medecin.age }}</li>
+              <li class="list-group-item">Sexe : {{ sexe }}</li>
+              <li class="list-group-item">Adresse : {{ medecin.adresse }}</li>
+              <li class="list-group-item">Mail : {{ medecin.mail }}</li>
+              <li class="list-group-item">Code INE : {{ medecin.codeINE }}</li>
+              <li class="list-group-item">Spécialité : {{ medecin.specialite }}</li>
+              <li class="list-group-item">Prix : {{ medecin.prix }}</li>
+              <li class="list-group-item">Présentation : {{ medecin.presentation }}</li>
+              <li class="list-group-item">Expérience : {{ medecin.experience }}</li>
+              <li class="list-group-item">Heure d'Ouverture : {{ medecin.heureOuverture }}</li>
+              <li class="list-group-item">Heure de Fermeture : {{ medecin.heureFermeture }}</li>
+              <li class="list-group-item">Mot de passe : {{ medecin.mdp }}</li>
+            </ul>
+            <div class="card-body">
+                <button type="button" (click)="modifier()">Modifier le profile</button>
+            </div>
+        </div>        
+    </div>
+</div>

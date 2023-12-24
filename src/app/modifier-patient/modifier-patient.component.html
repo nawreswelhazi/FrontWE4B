@@ -1,0 +1,14 @@
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Profile</h5>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        Nom Prénom:
+        <span *ngIf="!isEditing['nom']">{{ patient.nom }} {{ patient.prenom }}</span>
+        <input *ngIf="isEditing['nom']" type="text" [formControl]="patientProfileForm.get('nom')">
+        <button (click)="toggleEditMode('nom')">{{ isEditing['nom'] ? 'Save' : 'Edit' }}</button>
+      </li>
+    </ul>
+  </div>
+  

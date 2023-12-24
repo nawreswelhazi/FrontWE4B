@@ -1,0 +1,20 @@
+body {
+    background-color: #ffffff; /* White background */
+    color: #333333; /* Dark text color */
+}
+
+.navbar { 
+    background-color: #3498db;
+}
+
+.navbar-brand {
+    color: #ffffff;
+}
+
+.navbar-nav .nav-link {
+    color: #ffffff;
+}
+
+.navbar-nav .nav-link:hover {
+color: #ecf0f1;
+}

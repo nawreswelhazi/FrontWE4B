@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+            <h5 class="card-title">Profile</h5>
+            </div>
+            <ul class="list-group list-group-flush">
+            <li class="list-group-item">Nom Prénom : {{patient.nom}} {{patient.prenom}}</li>
+            <li class="list-group-item">Age : {{patient.age}}</li>
+            <li class="list-group-item">Sexe : {{sexe}}</li>
+            <li class="list-group-item">Adresse : {{patient.adresse}}</li>
+            <li class="list-group-item">Mail : {{patient.mail}}</li>
+            <li class="list-group-item">Poids : {{patient.poids}}</li>
+            <li class="list-group-item">Taille : {{patient.taille}}</li>
+            <li class="list-group-item">Assurance : {{patient.assurance}}</li>
+            <li class="list-group-item">Mot de passe : {{patient.mdp}}</li>
+            </ul>
+            <div class="card-body">
+                <button type="button" (click)="modifier()">Modifier le profile</button>
+            </div>
+        </div>
+    </div>
+</div>

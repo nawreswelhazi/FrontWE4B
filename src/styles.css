@@ -1,0 +1,8 @@
+h1 {
+    padding: 1vh;
+    font-size: 10vh;
+    text-align: center; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

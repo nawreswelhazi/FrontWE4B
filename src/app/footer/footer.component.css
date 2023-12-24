@@ -1,0 +1,10 @@
+.container-fluid {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #495057;
+    border-top: 1px solid #000000;
+    margin: 0;
+    padding: 2rem 0 1rem 1rem;
+    width: 100%;
+}
+
