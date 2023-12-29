@@ -1,7 +1,13 @@
-body {
-    background-color: #ffffff; /* White background */
-    color: #333333; /* Dark text color */
+a:hover {
+    color: white !important;
+    text-decoration: none !important;
 }
+/*body {
+    background-color: #ffffff;  White background 
+    color: #333333;  Dark text color
+}
+a{
+    color:white
 
 .navbar { 
     background-color: #3498db;
@@ -17,4 +23,4 @@ body {
 
 .navbar-nav .nav-link:hover {
 color: #ecf0f1;
-}
+}*/

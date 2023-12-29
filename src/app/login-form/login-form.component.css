@@ -1,8 +1,10 @@
 .container{
-    margin-bottom: 2rem;
+    margin: 2rem;
     padding: 2rem;
 }
-
+.container .mt-5{
+    margin-top: 30px;
+}
 h2{
     text-align: center;
 }

@@ -1,0 +1,14 @@
+.hero {
+    height: 25% !important;
+    --section-padding: 90px;
+    padding-bottom:  20px; ;
+    
+    
+    }
+    .hero-card{
+        width: 110rem ;
+    }
+    ul{
+        display: flex;
+        flex-direction: column;
+    }

@@ -6,7 +6,7 @@
       <li class="list-group-item">
         Nom Prénom:
         <span *ngIf="!isEditing['nom']">{{ patient.nom }} {{ patient.prenom }}</span>
-        <input *ngIf="isEditing['nom']" type="text" [formControl]="patientProfileForm.get('nom')">
+        <!-- <input *ngIf="isEditing['nom']" type="text" [formControl]="patientProfileForm.get('nom')"> -->
         <button (click)="toggleEditMode('nom')">{{ isEditing['nom'] ? 'Save' : 'Edit' }}</button>
       </li>
     </ul>
