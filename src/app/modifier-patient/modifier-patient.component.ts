@@ -15,7 +15,7 @@ interface status{
 export class ModifierPatientComponent implements OnInit {
   
 
-  patient: Patient = new Patient(1, "nom", "prenom", 20, 1, "adresse", "mail", 50, 1.80, "assurance", "mdp");
+  patient: Patient = new Patient(1, "nom", "prenom", 20, 1, "adresse", "mail", "mdp","assurance", 50, 1.80);
   sexe: string = this.patient.sexe === 0 ? "Homme" : "Femme";
   patientProfileForm!: FormGroup;
   isEditing!:status;

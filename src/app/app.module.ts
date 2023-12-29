@@ -19,6 +19,8 @@ import { ModifierMedecinComponent } from './modifier-medecin/modifier-medecin.co
 import { IonicModule } from '@ionic/angular';
 import { NavbarPagesComponent } from './navbar-pages/navbar-pages.component';
 import { ListeMedecinsComponent } from './liste-medecins/liste-medecins.component';
+import { PrendreRDVComponent } from './prendre-rdv/prendre-rdv.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -36,14 +38,16 @@ import { ListeMedecinsComponent } from './liste-medecins/liste-medecins.componen
     ModifierPatientComponent,
     ModifierMedecinComponent,
     NavbarPagesComponent,
-    ListeMedecinsComponent
+    ListeMedecinsComponent,
+    PrendreRDVComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    IonicModule.forRoot()
+    IonicModule.forRoot(),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

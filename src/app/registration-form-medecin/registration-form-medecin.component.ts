@@ -25,8 +25,6 @@ export class RegistrationFormMedecinComponent implements OnInit {
       prix: [null, [Validators.required, Validators.min(0)]],
       presentation: ['', Validators.required],
       experience: [null, [Validators.required, Validators.min(0)]],
-      heureOuverture: ['', Validators.required],
-      heureFermeture: ['', Validators.required],
       mdp: ['', Validators.required],
       mdpCheck: ['', Validators.required]
     });
@@ -43,14 +41,12 @@ export class RegistrationFormMedecinComponent implements OnInit {
         sexe,
         this.registrationFormMedecin.value.adresse,
         this.registrationFormMedecin.value.mail,
+        this.registrationFormMedecin.value.mdp,
         this.registrationFormMedecin.value.codeINE,
         this.registrationFormMedecin.value.specialite,
         this.registrationFormMedecin.value.prix,
         this.registrationFormMedecin.value.presentation,
         this.registrationFormMedecin.value.experience,
-        this.registrationFormMedecin.value.heureOuverture,
-        this.registrationFormMedecin.value.heureFermeture,
-        this.registrationFormMedecin.value.mdp
       );
       console.log('Medecin:', medecin);
     }else{

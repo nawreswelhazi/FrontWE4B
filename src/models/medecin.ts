@@ -1,21 +1,24 @@
-export class Medecin{
+import { personne } from "./personne"
+
+export class Medecin extends personne{
     constructor(
-        public id:number,
-        public nom:string,
-        public prenom:string,
-        public age:number,
-        public sexe:number,
-        public adresse:string,
-        public mail:string,
+        id:number,
+        nom:string,
+        prenom:string,
+        age:number,
+        sexe:number,
+        adresse:string,
+        mail:string,
+        mdp:string,
         public codeINE:string,
         public specialite:string,
-        public prix:number,
-        public presentation:string,
         public experience:number,
-        public heureOuverture:string, // jsp ce que c LocalTime
-        public heureFermeture:string, // pareil
-        public mdp:string
+        public prix:number,
+        photo?:string,
+        public presentation?:string,
+        
     ){
+        super(id,nom,prenom,age,sexe,adresse,mail,mdp, photo)
         this.id=id
         this.nom=nom
         this.prenom=prenom
@@ -28,8 +31,5 @@ export class Medecin{
         this.prix=prix
         this.presentation=presentation
         this.experience=experience
-        this.heureOuverture=heureOuverture
-        this.heureFermeture=heureFermeture
-        this.mdp=mdp
     }
 }
