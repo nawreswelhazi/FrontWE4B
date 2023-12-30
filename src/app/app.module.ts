@@ -21,6 +21,8 @@ import { NavbarPagesComponent } from './navbar-pages/navbar-pages.component';
 import { ListeMedecinsComponent } from './liste-medecins/liste-medecins.component';
 import { PrendreRDVComponent } from './prendre-rdv/prendre-rdv.component';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,9 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     IonicModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

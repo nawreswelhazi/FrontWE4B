@@ -3,6 +3,7 @@
   import { FormBuilder,FormGroup, Validators } from '@angular/forms';
 import { PatientService } from '../services/patient.service';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
   @Component({
     selector: 'app-registration-form',
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
   })
   export class RegistrationFormComponent implements OnInit {
     registrationForm!: FormGroup;
-    constructor(private fb : FormBuilder, private PS: PatientService, private router: Router) { }
+    constructor(private fb : FormBuilder, private PS: PatientService, private router: Router, private snackBar: MatSnackBar) { }
 
     ngOnInit(): void {
       this.registrationForm = this.fb.group({
@@ -49,9 +50,15 @@ import { Router } from '@angular/router';
           (result) => {
             console.log('RDV added successfully:', result);
             this.router.navigate(['']);
+            this.snackBar.open('Compte créé avec succès', 'Fermer', {
+              duration: 4000, // Durée en millisecondes pour afficher le message
+            });
           },
           (error) => {
             console.error('Error creating Patient:', error);
+            this.snackBar.open('Mail ou numéro assurance existant', 'Fermer', {
+              duration: 4000, // Durée en millisecondes pour afficher le message
+            });
           })
         console.log('Patient:', patient);
       }else{

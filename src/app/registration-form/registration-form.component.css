@@ -15,3 +15,5 @@ main {
     height: 100%; /* ou une valeur appropriée */
     overflow: auto; /* ou overflow: scroll; */
 }
+
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
