@@ -1,6 +1,7 @@
   import { Component, OnInit } from '@angular/core';
   import { Patient } from 'src/models/patient';
   import { FormBuilder,FormGroup, Validators } from '@angular/forms';
+import { PatientService } from '../services/patient.service';
 
   @Component({
     selector: 'app-registration-form',
@@ -9,7 +10,7 @@
   })
   export class RegistrationFormComponent implements OnInit {
     registrationForm!: FormGroup;
-    constructor(private fb : FormBuilder) { }
+    constructor(private fb : FormBuilder, private PS: PatientService) { }
 
     ngOnInit(): void {
       this.registrationForm = this.fb.group({
@@ -32,18 +33,24 @@
       if(this.registrationForm.value.mdp === this.registrationForm.value.mdpCheck){
         const sexe:number = this.registrationForm.value.sexe==="homme" ? 0:1;
         const patient: Patient = new Patient(
-          1, //changer pour id
           this.registrationForm.value.nom,
           this.registrationForm.value.prenom,
           this.registrationForm.value.age,
           sexe,
           this.registrationForm.value.adresse,
           this.registrationForm.value.mail,
-          this.registrationForm.value.poids,
-          this.registrationForm.value.taille,
+          this.registrationForm.value.mdp,
           this.registrationForm.value.assurance,
-          this.registrationForm.value.mdp
+          this.registrationForm.value.poids,
+          this.registrationForm.value.taille
         );
+        this.PS.addPatient(patient).subscribe(
+          (result) => {
+            console.log('RDV added successfully:', result);
+          },
+          (error) => {
+            console.error('Error creating Patient:', error);
+          })
         console.log('Patient:', patient);
       }else{
         alert("mdp different");

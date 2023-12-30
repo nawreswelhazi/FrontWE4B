@@ -15,7 +15,7 @@ interface status{
 export class ModifierPatientComponent implements OnInit {
   
 
-  patient: Patient = new Patient(1, "nom", "prenom", 20, 1, "adresse", "mail", "mdp","assurance", 50, 1.80);
+  patient: Patient = new Patient("nom", "prenom", 20, 1, "adresse", "mail", "mdp","assurance", 50, 1.80);
   sexe: string = this.patient.sexe === 0 ? "Homme" : "Femme";
   patientProfileForm!: FormGroup;
   isEditing!:status;
@@ -32,7 +32,7 @@ export class ModifierPatientComponent implements OnInit {
       mail: [this.patient.mail, [Validators.required, Validators.email]],
       poids: [this.patient.poids, Validators.required],
       taille: [this.patient.taille, Validators.required],
-      assurance: [this.patient.assurance, Validators.required],
+      assurance: [this.patient.num_assurance, Validators.required],
       mdp: [this.patient.mdp, Validators.required]
     });
   }

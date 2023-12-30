@@ -2,7 +2,6 @@ import { personne } from "./personne"
 
 export class Patient extends personne{
     constructor(
-        id: number,
         nom: string,
         prenom: string,
         age: number,
@@ -10,14 +9,15 @@ export class Patient extends personne{
         adresse: string,
         mail: string,
         mdp: string,
-        public assurance:string,
+        public num_assurance:string,
         public poids?:number,
         public taille?:number,
         photo?: string,
+        id?: number
     ){
-        super(id,nom,prenom,age,sexe,adresse,mail,mdp, photo)
+        super(nom,prenom,age,sexe,adresse,mail,mdp, photo, id)
         this.poids=poids
         this.taille=taille
-        this.assurance=assurance
+        this.num_assurance=num_assurance
     }
 }

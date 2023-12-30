@@ -105,11 +105,9 @@ export class PrendreRDVComponent implements OnInit {
     this.rdvService.addRDV(rdv1).subscribe(
       (result) => {
         console.log('RDV added successfully:', result);
-        // Handle success, e.g., show a success message or navigate to another page
       },
       (error) => {
         console.error('Error adding RDV:', error);
-        // Handle error, e.g., show an error message
       }
     );
   }

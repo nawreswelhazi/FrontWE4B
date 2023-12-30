@@ -10,3 +10,8 @@ h2{
 form{
     text-align: center;
 }
+
+main {
+    height: 100%; /* ou une valeur appropriée */
+    overflow: auto; /* ou overflow: scroll; */
+}

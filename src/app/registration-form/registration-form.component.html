@@ -1,63 +1,65 @@
 <app-navbar-pages></app-navbar-pages>
 
 <br>
-<br>
-<br>
-<div class="container mt-5">
-    <div class="row justify-content-center">
-      <div class="col-md-6">
-        <h2>Formulaire d'inscription</h2>
-        <form [formGroup]="registrationForm" (ngSubmit)="submit()" class="form">
-          <div class="form-group">
-            <label for="nom">Nom:</label>
-            <input type="text"  class="input-field title-lg" id="nom" formControlName="nom" placeholder="Entrer votre nom" required>
-          </div>
-          <div class="form-group">
-            <label for="prenom">Prénom:</label>
-            <input type="text"  class="input-field title-lg" id="prenom" formControlName="prenom" placeholder="Entrer votre prénom" required>
-          </div>
-          <div class="form-group">
-            <label for="age">Age:</label>
-            <input type="number"  class="input-field title-lg" id="age" formControlName="age" placeholder="Entrer votre age" required>
-          </div>
-          <div class="form-group">
-            <label for="sexe">Sexe:</label>
-            <select class="form-control" id="sexe" formControlName="sexe" required>
-              <option value="homme">Homme</option>
-              <option value="femme">Femme</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="adresse">Adresse:</label>
-            <input type="text" class="input-field title-lg" id="adresse" formControlName="adresse" placeholder="Entrer votre adresse" required>
-          </div>
-          <div class="form-group">
-            <label for="mail">Mail:</label>
-            <input type="email" class="input-field title-lg" id="mail" formControlName="mail" placeholder="Entrer votre mail" required>
-          </div>
-          <div class="form-group">
-            <label for="poids">Poids (kg):</label>
-            <input type="number" class="input-field title-lg" id="poids" formControlName="poids" placeholder="Entrer votre poids" required>
-          </div>
-          <div class="form-group">
-            <label for="taille">Taille (m):</label>
-            <input type="number" step="0.01" class="input-field title-lg" formControlName="taille" id="taille" placeholder="Entrer votre taille" required>
-          </div>
-          <div class="form-group">
-            <label for="assurance">Numéro d'Assurance:</label>
-            <input type="text" class="input-field title-lg" id="assurance" formControlName="assurance" placeholder="Entrer votre numéro d'assurance" required>
-          </div>
-          <div class="form-group">
-            <label for="mdp">Mot de passe:</label>
-            <input type="text" class="input-field title-lg" id="mdp" formControlName="mdp" placeholder="Entrer votre mot de passe" required>
-          </div>
-          <div class="form-group">
-            <label for="mdp-check">Validation mot de passe:</label>
-            <input type="text" class="input-field title-lg" id="mdp-check" formControlName="mdpCheck" placeholder="Valider votre mot de passe" required>
-          </div>
-          <button type="submit" class="btn has-before title-md">Inscription</button>
-          <!-- <button type="submit" class="btn btn-primary">Inscription</button> -->
-        </form>
+<main>
+  <article>
+  <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <h2>Formulaire d'inscription</h2>
+          <form [formGroup]="registrationForm" (ngSubmit)="submit()" class="form">
+            <div class="form-group">
+              <label for="nom">Nom:</label>
+              <input type="text"  class="input-field title-lg" id="nom" formControlName="nom" placeholder="Entrer votre nom" required>
+            </div>
+            <div class="form-group">
+              <label for="prenom">Prénom:</label>
+              <input type="text"  class="input-field title-lg" id="prenom" formControlName="prenom" placeholder="Entrer votre prénom" required>
+            </div>
+            <div class="form-group">
+              <label for="age">Age:</label>
+              <input type="number"  class="input-field title-lg" id="age" formControlName="age" placeholder="Entrer votre age" required>
+            </div>
+            <div class="form-group">
+              <label for="sexe">Sexe:</label>
+              <select class="form-control" id="sexe" formControlName="sexe" required>
+                <option value="homme">Homme</option>
+                <option value="femme">Femme</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="adresse">Adresse:</label>
+              <input type="text" class="input-field title-lg" id="adresse" formControlName="adresse" placeholder="Entrer votre adresse" required>
+            </div>
+            <div class="form-group">
+              <label for="mail">Mail:</label>
+              <input type="email" class="input-field title-lg" id="mail" formControlName="mail" placeholder="Entrer votre mail" required>
+            </div>
+            <div class="form-group">
+              <label for="poids">Poids (kg):</label>
+              <input type="number" class="input-field title-lg" id="poids" formControlName="poids" placeholder="Entrer votre poids" required>
+            </div>
+            <div class="form-group">
+              <label for="taille">Taille (m):</label>
+              <input type="number" step="0.01" class="input-field title-lg" formControlName="taille" id="taille" placeholder="Entrer votre taille" required>
+            </div>
+            <div class="form-group">
+              <label for="assurance">Numéro d'Assurance:</label>
+              <input type="text" class="input-field title-lg" id="assurance" formControlName="assurance" placeholder="Entrer votre numéro d'assurance" required>
+            </div>
+            <div class="form-group">
+              <label for="mdp">Mot de passe:</label>
+              <input type="text" class="input-field title-lg" id="mdp" formControlName="mdp" placeholder="Entrer votre mot de passe" required>
+            </div>
+            <div class="form-group">
+              <label for="mdp-check">Validation mot de passe:</label>
+              <input type="text" class="input-field title-lg" id="mdp-check" formControlName="mdpCheck" placeholder="Valider votre mot de passe" required>
+            </div>
+            <button type="submit" class="btn has-before title-md">Inscription</button>
+            <!-- <button type="submit" class="btn btn-primary">Inscription</button> -->
+          </form>
+        </div>
       </div>
     </div>
-  </div>
+  </article>
+</main>

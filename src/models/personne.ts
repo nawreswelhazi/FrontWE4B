@@ -1,6 +1,5 @@
 export class personne{
     constructor(
-        public id:number,
         public nom:string,
         public prenom:string,
         public age:number,
@@ -9,6 +8,7 @@ export class personne{
         public mail:string,
         public mdp:string,
         public photo?:string,
+        public id?:number,
     ){
         this.id=id
         this.nom=nom

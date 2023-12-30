@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
 })
 export class ProfileMedecinComponent implements OnInit {
   medecin:Medecin = new Medecin(
-    1,
     "nom",
     "prenom", 
     20, 

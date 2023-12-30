@@ -34,7 +34,6 @@ export class RegistrationFormMedecinComponent implements OnInit {
     if(this.registrationFormMedecin.value.mdp === this.registrationFormMedecin.value.mdpCheck){
       const sexe:number = this.registrationFormMedecin.value.sexe==="homme" ? 0:1;
       const medecin: Medecin = new Medecin(
-        1, // changer pour id
         this.registrationFormMedecin.value.nom,
         this.registrationFormMedecin.value.prenom,
         this.registrationFormMedecin.value.age,
