@@ -13,7 +13,7 @@ export class Patient extends personne{
         public poids?:number,
         public taille?:number,
         photo?: string,
-        id?: number
+        id?: number,
     ){
         super(nom,prenom,age,sexe,adresse,mail,mdp, photo, id)
         this.poids=poids
