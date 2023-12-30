@@ -2,6 +2,7 @@
   import { Patient } from 'src/models/patient';
   import { FormBuilder,FormGroup, Validators } from '@angular/forms';
 import { PatientService } from '../services/patient.service';
+import { Router } from '@angular/router';
 
   @Component({
     selector: 'app-registration-form',
@@ -10,7 +11,7 @@ import { PatientService } from '../services/patient.service';
   })
   export class RegistrationFormComponent implements OnInit {
     registrationForm!: FormGroup;
-    constructor(private fb : FormBuilder, private PS: PatientService) { }
+    constructor(private fb : FormBuilder, private PS: PatientService, private router: Router) { }
 
     ngOnInit(): void {
       this.registrationForm = this.fb.group({
@@ -47,6 +48,7 @@ import { PatientService } from '../services/patient.service';
         this.PS.addPatient(patient).subscribe(
           (result) => {
             console.log('RDV added successfully:', result);
+            this.router.navigate(['']);
           },
           (error) => {
             console.error('Error creating Patient:', error);
