@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { MedecinServiceService } from '../services/medecin-service.service';
 import { Medecin } from 'src/models/medecin';
+import { RdvService } from '../services/rdv.service';
+import { Rdv } from 'src/models/rdv';
+import { Patient } from 'src/models/patient';
+import { PatientService } from '../services/patient.service';
 
 @Component({
   selector: 'app-prendre-rdv',
@@ -11,13 +15,17 @@ export class PrendreRDVComponent implements OnInit {
   dateOptions: string[] = [];
   heuresOptions: string[] = [];
   public CurrentMedecin !: Medecin; //Le medecin qu'il a choisit pour prendre un rdv
-  getvalue:any;
+  getvalue:any; //date selectionnée
+  getTime:any;
+  motif:any; //texte
+  public CurrentUser !: Patient;
 
-  constructor(private MS: MedecinServiceService) { }
+  constructor(private MS: MedecinServiceService, private rdvService: RdvService, private PS: PatientService) { }
 
   ngOnInit(): void {
     this.generateDateOptions();
     this.onGetUsers();
+    this.onGetPatient();
   }
 
   generateDateOptions() {
@@ -65,6 +73,45 @@ export class PrendreRDVComponent implements OnInit {
     console.log(newValue)
     this.getvalue = newValue;
     this.loadHeuresRDV(this.getvalue);
+  }
+
+  onChangeTime(newValue:String) {
+    console.log(newValue)
+    this.getTime = newValue;
+  }
+
+  onChangeMotif(newValue:String) {
+    console.log(newValue)
+    this.motif = newValue;
+  }
+
+  onGetPatient(){
+    this.PS.getPatient(2).subscribe(
+      (data: Patient) => {
+        console.log("bonnnnn",data)
+        this.CurrentUser = data;
+      },
+      (err: any) => {
+        console.log("Le problème c'est", err);
+      }
+    );
+  }
+
+
+  addRDV(): void {
+    const rdv1: Rdv = new Rdv(this.CurrentMedecin, this.CurrentUser, this.motif,this.getTime ,this.getvalue);
+    console.log("hedha motif", this.motif);
+      
+    this.rdvService.addRDV(rdv1).subscribe(
+      (result) => {
+        console.log('RDV added successfully:', result);
+        // Handle success, e.g., show a success message or navigate to another page
+      },
+      (error) => {
+        console.error('Error adding RDV:', error);
+        // Handle error, e.g., show an error message
+      }
+    );
   }
 
 }

@@ -29,11 +29,17 @@
                 </div>
                 <br>
                 <div>
-                    <select required id="timeSelector">
+                    <select required id="timeSelector"  [ngModel]="getTime" (ngModelChange)="onChangeTime($event)">
                       <option value="" selected disabled>Quelle horaire vous convient?</option>
                       <option [ngValue]="heure" *ngFor="let heure of heuresOptions" value="heure">{{heure}}</option>
                     </select>
                 </div>
+                <br>
+                <div class="input-group">
+                    <span class="input-group-text">Motif</span>
+                    <textarea class="form-control" aria-label="With textarea" [ngModel]="motif" (ngModelChange)="onChangeMotif($event)"></textarea>
+                </div>
+                <a (click)="addRDV()" class="tryagain">Sauvegarder</a>
             </div>
         </section>
     </article>
