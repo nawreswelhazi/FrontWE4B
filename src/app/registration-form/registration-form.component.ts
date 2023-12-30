@@ -49,7 +49,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
         this.PS.addPatient(patient).subscribe(
           (result) => {
             console.log('RDV added successfully:', result);
-            this.router.navigate(['']);
+            this.router.navigate(['/']);
             this.snackBar.open('Compte créé avec succès', 'Fermer', {
               duration: 4000, // Durée en millisecondes pour afficher le message
             });

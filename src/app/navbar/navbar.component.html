@@ -79,7 +79,8 @@
       <ion-icon name="menu-outline"></ion-icon>
     </button>
 
-    <a routerLink="/login"  class="btn has-before title-md">Login</a>
+    <a routerLink="/login" *ngIf="userRole == null" class="btn has-before title-md">Login</a>
+    <a routerLink="/" *ngIf="userRole != null" class="btn has-before title-md" (click) ="logout()">Se déconnecter</a>
 
     <div class="overlay" data-nav-toggler data-overlay></div>
 

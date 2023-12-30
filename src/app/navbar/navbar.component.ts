@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SessionService } from '../services/session.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -8,11 +9,19 @@ import { SessionService } from '../services/session.service';
 })
 export class NavbarComponent implements OnInit {
   public userRole !: string | null;
+  private location!: Location
 
-  constructor(private sessionService: SessionService) { }
+  constructor(private sessionService: SessionService, private router: Router) { }
 
   ngOnInit(): void {
     this.userRole = this.sessionService.getUserRole();
+  }
+
+  logout(): void {
+    // Appeler la fonction clearStorage du service de session
+    this.sessionService.clearSession();
+
+    window.location.reload();
   }
 
 }
