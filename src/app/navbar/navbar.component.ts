@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SessionService } from '../services/session.service';
 
 @Component({
   selector: 'app-navbar',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+  public userRole !: string | null;
 
-  constructor() { }
+  constructor(private sessionService: SessionService) { }
 
   ngOnInit(): void {
+    this.userRole = this.sessionService.getUserRole();
   }
 
 }

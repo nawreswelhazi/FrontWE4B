@@ -19,3 +19,10 @@ main {
     height: 100%; /* ou une valeur appropriée */
     overflow: auto; /* ou overflow: scroll; */
 }
+
+.hero {
+  background-color: var(--midnight-green);
+  --section-padding: 200px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
