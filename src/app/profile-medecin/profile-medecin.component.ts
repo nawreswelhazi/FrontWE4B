@@ -9,21 +9,18 @@ import { Router } from '@angular/router';
 })
 export class ProfileMedecinComponent implements OnInit {
   medecin:Medecin = new Medecin(
-    1,
     "nom",
     "prenom", 
     20, 
     1, 
     "adresse", 
-    "mail", 
+    "mail",
+    "mdp", 
     "code INE", 
-    "specialite", 
-    10, 
-    "presentation",
+    "specialite",
     5,
-    "12H",
-    "18H",
-    "mdp"
+    10, 
+    "presentation"
   )
   sexe:string = this.medecin.sexe === 0 ? "Homme" : "Femme"
   constructor(private router:Router) { }

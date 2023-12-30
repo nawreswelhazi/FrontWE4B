@@ -1,34 +1,35 @@
-<app-navbar-pages></app-navbar-pages>
+<app-navbar></app-navbar>
 
 <br>
 <br>
 <br>
-
-<div class="container mt-5">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <h2>Login</h2>
-            <form [formGroup]="loginForm" (ngSubmit)="submit()" class="form">
-                <div class="form-group">
-                    <label for="email">Adresse E-mail :</label>
-                    <input type="email" class="input-field title-lg" id="email" formControlName="mail" placeholder="Entrez votre adresse e-mail" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="password">Mot de passe :</label>
-                    <input type="password" class="input-field title-lg" id="password" formControlName="mdp" placeholder="Entrez votre mot de passe" required>
-                </div>
-                <div class="form-group">
-                     <!-- <button type="submit" class="btn btn-primary">Se connecter</button>  -->
-                    <button type="submit" class="btn has-before title-md">Se connecter</button>
-                </div>
-                <div class="form-group">
-                    <p>Vous etes patient ? <a routerLink="/registration">Créer un compte patient</a></p>
-                </div>
-                <div class="form-group">
-                    <p>Vous etes médecin ? <a routerLink="/registration-medecin">Créer un compte médecin</a></p>
-                </div>
-            </form>
+<main>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h2>Login</h2>
+                <form [formGroup]="loginForm" (ngSubmit)="submit()" class="form">
+                    <div class="form-group">
+                        <label for="email">Adresse E-mail :</label>
+                        <input type="email" class="input-field title-lg" id="email" formControlName="mail" placeholder="Entrez votre adresse e-mail" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Mot de passe :</label>
+                        <input type="password" class="input-field title-lg" id="password" formControlName="mdp" placeholder="Entrez votre mot de passe" required>
+                    </div>
+                    <div class="form-group">
+                        <!-- <button type="submit" class="btn btn-primary">Se connecter</button>  -->
+                        <button type="submit" class="btn has-before title-md">Se connecter</button>
+                    </div>
+                    <div class="form-group">
+                        <p>Vous etes patient ? <a routerLink="/registration">Créer un compte patient</a></p>
+                    </div>
+                    <div class="form-group">
+                        <p>Vous etes médecin ? <a routerLink="/registration-medecin">Créer un compte médecin</a></p>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-</div>
+</main>

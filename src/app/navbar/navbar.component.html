@@ -21,24 +21,20 @@
 
       <ul class="navbar-list">
 
-        <li class="navbar-item">
-          <a href="#" class="navbar-link title-md" routerLink="">Home</a>
+        <li *ngIf="userRole !== 'medecin'" class="navbar-item">
+          <a  href="#" class="navbar-link title-md" routerLink="">Home</a>
         </li>
 
-        <li class="navbar-item">
+        <li class="navbar-item" *ngIf="userRole !== 'medecin'">
           <a href="#" class="navbar-link title-md" routerLink="">Doctors</a>
         </li>
 
-        <li class="navbar-item">
-          <a href="#" class="navbar-link title-md">Services</a>
+        <li *ngIf="userRole != null" class="navbar-item">
+          <a href="#" class="navbar-link title-md" routerLink="prendreRDV">Mes RDV</a>
         </li>
 
-        <li class="navbar-item">
-          <a href="#" class="navbar-link title-md">Blog</a>
-        </li>
-
-        <li class="navbar-item">
-          <a href="#" class="navbar-link title-md" routerLink="/login">Contact</a>
+        <li *ngIf="userRole != null" class="navbar-item">
+          <a href="#" class="navbar-link title-md" routerLink="/login">Compte</a>
         </li>
 
       </ul>
@@ -83,7 +79,8 @@
       <ion-icon name="menu-outline"></ion-icon>
     </button>
 
-    <a routerLink="/login"  class="btn has-before title-md">Login</a>
+    <a routerLink="/login" *ngIf="userRole == null" class="btn has-before title-md">Login</a>
+    <a routerLink="/" *ngIf="userRole != null" class="btn has-before title-md" (click) ="logout()">Se déconnecter</a>
 
     <div class="overlay" data-nav-toggler data-overlay></div>
 

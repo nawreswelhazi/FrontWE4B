@@ -1,0 +1,174 @@
+main {
+  height: 100%; /* ou une valeur appropriée */
+  overflow: auto; /* ou overflow: scroll; */
+}
+
+section {
+  padding: 10%;
+  padding-left: 0;
+}
+  
+  #userProfile {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    text-align: left;
+  }
+  #userProfile .row {
+    height: 80%; /* Utilise la hauteur complète de #userProfile */
+    display: flex;
+    align-items: center;
+  }
+
+  #userProfile img {
+    width: 70%;
+    height: 70%;
+    border-radius: 50%;
+  }
+
+  #userProfile p {
+    margin: 0;
+  }
+
+  .doctorInfo {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    border-radius: var(--radius-12);
+    background-color: var(--white);
+    box-shadow: var(--shadow-1);
+    width: 70vw;
+    height: 15vw;
+    display: flex;
+    margin-top: -20px;
+  }
+
+
+
+  /* partie selest date */
+
+  select {
+    color: #005BA6;
+    display: block;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 16px;
+    width: 40%;
+  }
+
+
+  select::before,
+  select::after {
+    content: '';
+    display: block;
+    position: absolute;
+    pointer-events: none;
+    border: 1px solid transparent;
+    width: 0;
+    height: 0;
+    right: 16px;
+  }
+
+  select::before {
+    bottom: 55%;
+    border-width: 0 6.5px 8px 6.5px;
+    border-bottom-color: #D6D6D6;
+  }
+
+  select::after {
+    border-width: 8px 6.5px 0 6.5px;
+    border-top-color: #D6D6D6;
+    top: 55%;
+  }
+
+  select:hover {
+    border-right: 3px solid #005BA6;
+  }
+  
+
+   /* partie selest date */
+
+  select {
+    color: #005BA6;
+    display: block;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 16px;
+    width: 100%;
+  }
+
+
+  select::before,
+  select::after {
+    content: '';
+    display: block;
+    position: absolute;
+    pointer-events: none;
+    border: 1px solid transparent;
+    width: 0;
+    height: 0;
+    right: 16px;
+  }
+
+  select::before {
+    bottom: 55%;
+    border-width: 0 6.5px 8px 6.5px;
+    border-bottom-color: #D6D6D6;
+  }
+
+  select::after {
+    border-width: 8px 6.5px 0 6.5px;
+    border-top-color: #D6D6D6;
+    top: 55%;
+  }
+
+  select:hover {
+    border-right: 3px solid #005BA6;
+  }
+
+  /*bouton*/
+  .tryagain {
+		background-attachment: scroll;
+		background-clip: border-box;
+		background-color: rgb(123, 163, 150);
+		background-image: none;
+		background-origin: padding-box;
+		background-size: auto;
+		border-bottom-left-radius: 16px;
+		border-bottom-right-radius: 16px;
+		border-top-left-radius: 16px;
+		border-top-right-radius: 16px;
+		box-sizing: border-box;
+		color: rgb(255, 255, 255);
+		cursor: pointer;
+		display: inline-block;
+		font-family: 'Open Sans', sans-serif;
+		font-size: 20px;
+		font-stretch: normal;
+		font-style: normal;
+		font-variant: normal;
+		font-weight: normal;
+		height: 50px;
+		line-height: normal;
+		outline-width: 0px;
+		padding: 1%;
+		text-align: center;
+		text-transform: none;
+		transition-delay: 0s;
+		transition-duration: 0.28s;
+		transition-property: box-shadow;
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+		width: 200px;
+		z-index: 0;
+    justify-items: center;
+    margin-left: -150%;
+		}
+
+		a:link, a:hover, a:visited, a:active {
+			text-decoration: none;
+		}
+
+
+    .input-group {
+      width: 50%;
+    }
+  

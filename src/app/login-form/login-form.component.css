@@ -1,3 +1,5 @@
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
 .container{
     margin: 2rem;
     padding: 2rem;
@@ -11,4 +13,16 @@ h2{
 
 form{
     text-align: center;
+}
+
+main {
+    height: 100%; /* ou une valeur appropriée */
+    overflow: auto; /* ou overflow: scroll; */
+}
+
+.hero {
+  background-color: var(--midnight-green);
+  --section-padding: 200px;
+  background-repeat: no-repeat;
+  background-size: cover;
 }

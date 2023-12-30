@@ -1,27 +1,23 @@
-export class Patient{
+import { personne } from "./personne"
+
+export class Patient extends personne{
     constructor(
-        public id:number,
-        public nom:string,
-        public prenom:string,
-        public age:number,
-        public sexe:number,
-        public adresse:string,
-        public mail:string,
-        public poids:number,
-        public taille:number,
-        public assurance:string,
-        public mdp:string
+        nom: string,
+        prenom: string,
+        age: number,
+        sexe: number,
+        adresse: string,
+        mail: string,
+        mdp: string,
+        public num_assurance:string,
+        public poids?:number,
+        public taille?:number,
+        photo?: string,
+        id?: number,
     ){
-        this.id=id
-        this.nom=nom
-        this.prenom=prenom
-        this.age=age
-        this.sexe=sexe
-        this.adresse=adresse
-        this.mail=mail
+        super(nom,prenom,age,sexe,adresse,mail,mdp, photo, id)
         this.poids=poids
         this.taille=taille
-        this.assurance=assurance
-        this.mdp=mdp
+        this.num_assurance=num_assurance
     }
 }

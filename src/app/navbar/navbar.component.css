@@ -1,6 +1,5 @@
-a:hover {
-    color: white !important;
-    text-decoration: none !important;
+header {
+    background-color: var(--midnight-green);
 }
 
 /*body {
