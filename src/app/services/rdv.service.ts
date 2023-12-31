@@ -14,4 +14,12 @@ export class RdvService {
   addRDV(r: Rdv):Observable<Rdv>{
     return this.http.post<Rdv>(`${this.hostRDV + '/new'}`, r);
   }
+
+  getRDVPatient(id: number):Observable<any>{
+    return this.http.get<any>(`${this.hostRDV + '/getPatient'}/${id}`);
+  }
+
+  getRDVMedecin(id: number):Observable<any>{
+    return this.http.get<any>(`${this.hostRDV + '/getMedecin'}/${id}`);
+  }
 }

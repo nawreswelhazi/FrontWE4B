@@ -24,6 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { MesRDVComponent } from './mes-rdv/mes-rdv.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     NavbarPagesComponent,
     ListeMedecinsComponent,
     PrendreRDVComponent,
-   
+    MesRDVComponent
   ],
   imports: [
     BrowserModule,
