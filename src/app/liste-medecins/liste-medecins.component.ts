@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute,Router } from '@angular/router';
 import { MedecinServiceService } from '../services/medecin-service.service';
 import { Medecin } from 'src/models/medecin';
+
 
 @Component({
   selector: 'app-liste-medecins',
@@ -13,17 +14,41 @@ export class ListeMedecinsComponent implements OnInit {
   ville!:string;
   medecins!:any;
 
-  constructor(private activatedroute : ActivatedRoute,private MS: MedecinServiceService, private router:Router) { 
+  constructor(private activatedroute : ActivatedRoute,private MS: MedecinServiceService,private router:Router) { 
   
 
 
   }
 
   ngOnInit(): void {
-    this.specialite = this.activatedroute.snapshot.params['specialite'];
-  this.ville = this.activatedroute.snapshot.params['ville'];
+    this.specialite = this.activatedroute.snapshot.params['specialite']||null;
+  this.ville = this.activatedroute.snapshot.params['ville']||null;
+  console.log(this.specialite);
+  console.log(this.ville);
+  
+  if(this.specialite!=null && this.ville!=null ){
     this.getMedecinsBySpecialiteVille();
+  }else{
+    this.getallMedecins();
+
   }
+  }
+  getMedecins(){
+    console.log(this.specialite);
+    console.log(this.ville);
+    this.router.navigate(['/', 'liste-medecins', this.specialite,this.ville])
+
+  }
+   getallMedecins() {
+     this.MS.getallMedecin().subscribe(res=>{
+        console.log(res);
+        this.medecins= res;
+  
+      })
+  
+    
+  
+   }
   getMedecinsBySpecialiteVille(){
     this.MS.getMedecinsBySpecialiteVille(this.specialite,this.ville).subscribe(res=>{
       console.log(res);
