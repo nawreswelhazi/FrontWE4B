@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute,Router } from '@angular/router';
 import { MedecinServiceService } from '../services/medecin-service.service';
 import { Medecin } from 'src/models/medecin';
+import { SessionService } from '../services/session.service';
 
 
 @Component({
@@ -14,14 +15,16 @@ export class ListeMedecinsComponent implements OnInit {
   ville!:string;
   medecins!:any;
   searchText:any;
+  public userRole !: string | null;
 
-  constructor(private activatedroute : ActivatedRoute,private MS: MedecinServiceService,private router:Router) { 
+  constructor(private activatedroute : ActivatedRoute,private MS: MedecinServiceService,private router:Router, private sessionService : SessionService) { 
   
 
 
   }
 
   ngOnInit(): void {
+    this.userRole = this.sessionService.getUserRole();
     this.specialite = this.activatedroute.snapshot.params['specialite']||null;
   this.ville = this.activatedroute.snapshot.params['ville']||null;
   console.log(this.specialite);
