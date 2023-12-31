@@ -5,6 +5,8 @@ import { RdvService } from '../services/rdv.service';
 import { Rdv } from 'src/models/rdv';
 import { Patient } from 'src/models/patient';
 import { PatientService } from '../services/patient.service';
+import { Router } from '@angular/router';
+import { SessionService } from '../services/session.service';
 
 @Component({
   selector: 'app-prendre-rdv',
@@ -19,12 +21,14 @@ export class PrendreRDVComponent implements OnInit {
   getTime:any;
   motif:any; //texte
   public CurrentUser !: Patient;
+  public userId !: number | null;
 
-  constructor(private MS: MedecinServiceService, private rdvService: RdvService, private PS: PatientService) { }
+  constructor(private MS: MedecinServiceService, private rdvService: RdvService, private PS: PatientService, private router: Router, private sessionService: SessionService) { }
 
   ngOnInit(): void {
     this.generateDateOptions();
     this.onGetUsers();
+    this.userId = this.sessionService.getUserId();
     this.onGetPatient();
   }
 
@@ -86,7 +90,8 @@ export class PrendreRDVComponent implements OnInit {
   }
 
   onGetPatient(){
-    this.PS.getPatient(2).subscribe(
+    if (this.userId !== null){
+    this.PS.getPatient(this.userId).subscribe(
       (data: Patient) => {
         console.log("bonnnnn",data)
         this.CurrentUser = data;
@@ -94,7 +99,10 @@ export class PrendreRDVComponent implements OnInit {
       (err: any) => {
         console.log("Le problème c'est", err);
       }
-    );
+    );} else {
+      console.log("this.userId is null. Cannot fetch patient data.");
+      // Handle the null case if needed
+    }
   }
 
 
