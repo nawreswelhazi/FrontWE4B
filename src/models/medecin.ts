@@ -13,9 +13,11 @@ export class Medecin extends personne{
         public specialite:string,
         public experience:number,
         public prix:number,
+        public ville:string,
         photo?:string,
         public presentation?:string,
         id?:number
+        
         
     ){
         super(nom,prenom,age,sexe,adresse,mail,mdp, photo, id)
@@ -28,6 +30,7 @@ export class Medecin extends personne{
         this.mail=mail
         this.codeINE=codeINE
         this.specialite=specialite
+        this.specialite=ville
         this.prix=prix
         this.presentation=presentation
         this.experience=experience

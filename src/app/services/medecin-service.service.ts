@@ -20,4 +20,8 @@ export class MedecinServiceService {
   loadHeures(id: number, date:string):Observable<string[]>{
     return this.http.get<string[]>(`${this.hostRDV + '/getRDVMedecinExist'}/${id}/${date}`);
   }
+  getMedecinsBySpecialiteVille(specialite: string, ville:string):Observable<Medecin[]>{
+    return this.http.get<Medecin[]>(`${this.hostMed + '/getMedecinsBySpecialiteVille'}/${specialite}/${ville}`);
+  }
+
 }

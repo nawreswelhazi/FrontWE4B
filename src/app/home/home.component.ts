@@ -7,12 +7,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+ specialite!:string
+ ville!:string
   constructor(private router:Router) { }
 
   ngOnInit(): void {
   }
+  getMedecins(){
+    console.log(this.specialite);
+    console.log(this.ville);
+    this.router.navigate(['/', 'liste-medecins', this.specialite,this.ville])
 
+  }
   rendezVous(){
     this.router.navigate(['/','login']);
   }

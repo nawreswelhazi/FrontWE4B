@@ -20,6 +20,7 @@ export class ProfileMedecinComponent implements OnInit {
     "specialite",
     5,
     10, 
+    "ville",
     "presentation"
   )
   sexe:string = this.medecin.sexe === 0 ? "Homme" : "Femme"

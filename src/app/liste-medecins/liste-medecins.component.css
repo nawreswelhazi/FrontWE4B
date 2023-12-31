@@ -1,10 +1,9 @@
 .hero {
-    height: 25% !important;
-    --section-padding: 90px;
-    padding-bottom:  20px; ;
+    height: 50% !important;
+    --section-padding: 125px;
+    padding-bottom:  50px; ;
     
-    
-    }
+}
     .hero-card{
         width: 110rem ;
     }
@@ -16,4 +15,8 @@
 .liste {
     overflow: auto; /* ou overflow: scroll; */
     height: 100%;
+}
+.blog {
+    padding: 50px;
+
 }

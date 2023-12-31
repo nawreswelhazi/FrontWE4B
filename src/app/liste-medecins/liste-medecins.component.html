@@ -36,6 +36,124 @@
   <section class="section blog" aria-labelledby="blog-label">
     <div class="container">
 
+      <p class="section-subtitle title-lg text-center revealed" id="blog-label" data-reveal="bottom">
+        News & Article
+      </p>
+
+      <h2 class="section-title headline-md text-center revealed" data-reveal="bottom">Latest Articles</h2>
+
+      <ul class="grid-list">
+
+        <li *ngFor="let m of medecins; let i=index;">
+          <div class="blog-card has-before has-after revealed" data-reveal="bottom">
+
+            <div class="meta-wrapper">
+
+              <div class="card-meta">
+                <ion-icon name="person-outline"></ion-icon>
+
+                <span class="span"> {{m.nom}} </span>
+                <span class="span"> {{m.prenom}} </span>
+              </div>
+
+              <div class="card-meta">
+                <ion-icon name="folder-outline"></ion-icon>
+
+                <span class="span">{{m.specialite}}</span>
+              </div>
+
+            </div>
+
+            <h3 class="headline-sm card-title"><strong>address:</strong>{{m.adresse}}</h3>
+            <h3 class="headline-sm card-title"><strong>ville:</strong>{{m.ville}}</h3>
+
+            <time class="title-sm date" datetime="2022-01-28">Conventionné secteur 1</time>
+
+            <p class="card-text">
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+              labore et dolore magna aliquyam erat
+            </p>
+
+            <a href="#" class="btn-text title-lg">Prendre rendez-vous</a>
+
+          </div>
+        </li>
+
+        <!-- <li>
+          <div class="blog-card has-before has-after revealed" data-reveal="bottom">
+
+            <div class="meta-wrapper">
+
+              <div class="card-meta">
+                <ion-icon name="person-outline"></ion-icon>
+
+                <span class="span">By Admin</span>
+              </div>
+
+              <div class="card-meta">
+                <ion-icon name="folder-outline"></ion-icon>
+
+                <span class="span">Specialist</span>
+              </div>
+
+            </div>
+
+            <h3 class="headline-sm card-title">Give children more autonomy during the pandemic</h3>
+
+            <time class="title-sm date" datetime="2022-01-28">28 January, 2022</time>
+
+            <p class="card-text">
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+              labore et dolore magna aliquyam erat
+            </p>
+
+            <a href="#" class="btn-text title-lg">Read More</a>
+
+          </div>
+        </li> -->
+
+        <!-- <li>
+          <div class="blog-card has-before has-after revealed" data-reveal="bottom">
+
+            <div class="meta-wrapper">
+
+              <div class="card-meta">
+                <ion-icon name="person-outline"></ion-icon>
+
+                <span class="span">By Admin</span>
+              </div>
+
+              <div class="card-meta">
+                <ion-icon name="folder-outline"></ion-icon>
+
+                <span class="span">Specialist</span>
+              </div>
+
+            </div>
+
+            <h3 class="headline-sm card-title">How do binge eating and drinking impact the liver?</h3>
+
+            <time class="title-sm date" datetime="2022-01-28">28 January, 2022</time>
+
+            <p class="card-text">
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+              labore et dolore magna aliquyam erat
+            </p>
+
+            <a href="#" class="btn-text title-lg">Read More</a>
+
+          </div>
+        </li> -->
+
+      </ul>
+
+    </div>
+  </section>
+
+
+  <!-- <section class="section blog" aria-labelledby="blog-label">
+    <div class="container">
+
       <p class="section-subtitle title-lg text-center" id="blog-label" data-reveal="bottom">
         News & Article
       </p>
@@ -146,5 +264,5 @@
       </ul>
 
     </div>
-  </section>
+  </section> -->
 </div>

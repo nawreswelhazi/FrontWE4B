@@ -21,22 +21,27 @@
               <p class="title-lg card-text revealed">
                 Search doctors. clinics. hospitals. etc.
               </p>
-
+              <form  (ngSubmit)="getMedecins()">
               <div class="wrapper revealed">
+                
 
                 <div class="input-wrapper title-lg revealed">
-                  <input type="text" name="location" placeholder="Locations" class="input-field">
+                  <input type="text" [(ngModel)]="specialite" name="specialite" placeholder="specialite" class="input-field">
+                </div>
+                <div class="input-wrapper title-lg revealed">
+                  <input type="text" [(ngModel)]="ville" name="location" placeholder="Locations" class="input-field">
 
                   <ion-icon name="location"></ion-icon>
                 </div>
 
-                <button class="btn has-before">
+                <button type="submit" class="btn has-before">
                   <ion-icon name="search"></ion-icon>
 
-                  <span class="span title-md revealed" routerLink="/liste-medecins">Find Now</span>
+                  <span class="span title-md revealed">Find Now</span>
                 </button>
-
-              </div>
+               </div>
+               </form>
+            
 
             </div>
 
@@ -486,7 +491,7 @@
 
     </article>
   </main>
-  <app-footer></app-footer> 
+ 
 <!-- <div class="jumbotron">
   <div class="content">
     <h1 class="display-4">Bienvenue à l'Hôpital XYZ</h1>
