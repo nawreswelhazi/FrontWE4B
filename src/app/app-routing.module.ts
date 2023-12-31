@@ -21,7 +21,8 @@ const routes: Routes = [
   {path:'modifier-patient', component:ModifierPatientComponent},
   {path:'modifier-medecin', component:ModifierMedecinComponent},
   {path:'liste-medecins/:specialite/:ville', component:ListeMedecinsComponent},
-  {path: 'prendreRDV', component: PrendreRDVComponent}
+  {path:'liste-medecins', component:ListeMedecinsComponent},
+   {path: 'prendreRDV', component: PrendreRDVComponent}
 ];
 
 @NgModule({

@@ -16,6 +16,9 @@ export class MedecinServiceService {
   getMedecin(id:number):Observable<Medecin>{
     return this.http.get<Medecin>(`${this.hostMed + '/get'}/${id}`);
   }
+  getallMedecin():Observable<Medecin[]>{
+    return this.http.get<Medecin[]>(`${this.hostMed + '/all'}`);
+  }
 
   loadHeures(id: number, date:string):Observable<string[]>{
     return this.http.get<string[]>(`${this.hostRDV + '/getRDVMedecinExist'}/${id}/${date}`);
