@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MedecinServiceService } from '../services/medecin-service.service';
+import { Medecin } from 'src/models/medecin';
 
 @Component({
   selector: 'app-liste-medecins',
@@ -12,7 +13,7 @@ export class ListeMedecinsComponent implements OnInit {
   ville!:string;
   medecins!:any;
 
-  constructor(private activatedroute : ActivatedRoute,private MS: MedecinServiceService) { 
+  constructor(private activatedroute : ActivatedRoute,private MS: MedecinServiceService, private router:Router) { 
   
 
 
@@ -30,6 +31,13 @@ export class ListeMedecinsComponent implements OnInit {
 
     })
 
+  }
+
+  prendreRendezVous(medecin: Medecin) {
+    console.log('Médecin sélectionné:', medecin);
+    const doctorId = medecin.id;
+    console.log(medecin.id)
+    this.router.navigate([`prendreRDV/${doctorId}`]);
   }
 
 
