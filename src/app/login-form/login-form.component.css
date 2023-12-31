@@ -26,3 +26,9 @@ main {
   background-repeat: no-repeat;
   background-size: cover;
 }
+a{
+    color: var(--midnight-green);
+}
+a:hover{
+    color: var(--midnight-green);
+}
