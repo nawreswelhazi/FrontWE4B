@@ -29,11 +29,13 @@ export class MesRDVComponent implements OnInit {
         this.rdvService.getRDVMedecin(this.userId).subscribe(
           (data: Rdv[]) => {
             this.listeRDV = data;
+            console.log(this.listeRDV)
             for (let i = 0; i < this.listeRDV.length; i++) {
+              console.log("bon ", this.listeRDV[i].id)
               this.listePersonne.push(this.listeRDV[i].patient);
             }
           },(error) => {
-            console.error('Erreur lors du chargement des heures :', error);
+            console.error('Erreur lors du chargement des rendez-vous :', error);
           }
         );
       }
@@ -43,15 +45,28 @@ export class MesRDVComponent implements OnInit {
         this.rdvService.getRDVPatient(this.userId).subscribe(
           (data: Rdv[]) => {
             this.listeRDV = data;
+            console.log(data)
             for (let i = 0; i < this.listeRDV.length; i++) {
+              console.log("bon ", this.listeRDV[i].id)
               this.listePersonne.push(this.listeRDV[i].medecin);
             }
           },(error) => {
-            console.error('Erreur lors du chargement des heures :', error);
+            console.error('Erreur lors du chargement des rendez-vous :', error);
           }
         );
       }
     }  
+  }
+
+  deleteRDV(id : any){
+    this.rdvService.deleteRDV(id).subscribe(
+      (data: Rdv) => {
+        console.log(data)
+        console.log("Supprimé")
+        window.location.reload();
+      },(error) => {
+        console.error('Erreur lors de la suppression:', error);
+      });
   }
 
 }

@@ -18,7 +18,6 @@ export class NavbarComponent implements OnInit {
   }
 
   logout(): void {
-    // Appeler la fonction clearStorage du service de session
     this.sessionService.clearSession();
     this.router.navigate(['']);
   }
