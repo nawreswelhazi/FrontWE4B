@@ -1,0 +1,46 @@
+<app-navbar></app-navbar> 
+<main>
+    <br> <br> <br> <br> <br>
+    <ul class="grid-list">
+        <li *ngFor="let rdv of listeRDV; let i=index;">
+            <div class="row">
+                <div class="col-md-6" *ngIf="i % 2 === 0">
+                    <div class="blog-card has-before has-after revealed" data-reveal="bottom">
+                        <div class="meta-wrapper">
+                            <div class="card-meta">
+                                <ion-icon name="person-outline"></ion-icon>
+                                <span class="span">{{listePersonne[i].nom}} {{listePersonne[i].prenom}}</span>
+                            </div>
+                            <div class="card-meta">
+                                <ion-icon name="folder-outline"></ion-icon>
+                                <span class="span">{{listePersonne[i].specialite}}</span>
+                            </div>
+                        </div>
+                        <h3 class="headline-sm card-title">{{rdv.date}}</h3>
+                        <time class="title-sm date" datetime="2022-01-28">{{rdv.horaire}}</time>
+                        <p class="card-text">{{rdv.motif}}</p>
+                        <a href="#" class="btn-text title-lg">Annuler RDV</a>
+                    </div>
+                </div>
+                <div class="col-md-6"  *ngIf="i+1 % 2 === 1">
+                    <div class="blog-card has-before has-after revealed" data-reveal="bottom">
+                        <div class="meta-wrapper">
+                            <div class="card-meta">
+                                <ion-icon name="person-outline"></ion-icon>
+                                <span class="span">{{listePersonne[i+1].nom}} {{listePersonne[i].prenom}}</span>
+                            </div>
+                            <div class="card-meta">
+                                <ion-icon name="folder-outline"></ion-icon>
+                                <span class="span">{{listePersonne[i].specialite}}</span>
+                            </div>
+                        </div>
+                        <h3 class="headline-sm card-title">{{listeRDV[i + 1].date}}</h3>
+                        <time class="title-sm date" datetime="2022-01-28">{{listeRDV[i + 1].horaire}}</time>
+                        <p class="card-text">{{listeRDV[i + 1].motif}}</p>
+                        <a href="#" class="btn-text title-lg">Annuler RDV</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</main>

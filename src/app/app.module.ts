@@ -23,6 +23,7 @@ import { PrendreRDVComponent } from './prendre-rdv/prendre-rdv.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MesRDVComponent } from './mes-rdv/mes-rdv.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     ModifierMedecinComponent,
     NavbarPagesComponent,
     ListeMedecinsComponent,
-    PrendreRDVComponent
+    PrendreRDVComponent,
+    MesRDVComponent
   ],
   imports: [
     BrowserModule,

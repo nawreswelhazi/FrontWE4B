@@ -44,7 +44,13 @@ export class LoginFormComponent implements OnInit {
         else {this.sessionService.setUserRole("medecin");}
         console.log(this.sessionService.getUserId())
         console.log(this.sessionService.getUserRole())
-        this.router.navigate(['']);
+        if (this.sessionService.getUserRole() === "medecin")
+        {
+          this.router.navigate(['/MesRDV']);
+        }
+        else {
+          this.router.navigate(['']);
+        }
       },
       (error) => {
         console.error('Credentials not found', error);

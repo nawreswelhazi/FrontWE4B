@@ -10,6 +10,7 @@ import { ModifierPatientComponent } from './modifier-patient/modifier-patient.co
 import { ModifierMedecinComponent } from './modifier-medecin/modifier-medecin.component';
 import { ListeMedecinsComponent } from './liste-medecins/liste-medecins.component';
 import { PrendreRDVComponent } from './prendre-rdv/prendre-rdv.component';
+import { MesRDVComponent } from './mes-rdv/mes-rdv.component';
 
 const routes: Routes = [
   {path:'', component:HomeComponent},
@@ -21,7 +22,8 @@ const routes: Routes = [
   {path:'modifier-patient', component:ModifierPatientComponent},
   {path:'modifier-medecin', component:ModifierMedecinComponent},
   {path:'liste-medecins/:specialite/:ville', component:ListeMedecinsComponent},
-  {path: 'prendreRDV/:id', component: PrendreRDVComponent}
+  {path: 'prendreRDV/:id', component: PrendreRDVComponent},
+  {path: 'MesRDV', component: MesRDVComponent}
 ];
 
 @NgModule({
