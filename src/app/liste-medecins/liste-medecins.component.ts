@@ -13,6 +13,7 @@ export class ListeMedecinsComponent implements OnInit {
   specialite!:string;
   ville!:string;
   medecins!:any;
+  searchText:any;
 
   constructor(private activatedroute : ActivatedRoute,private MS: MedecinServiceService,private router:Router) { 
   
@@ -30,19 +31,16 @@ export class ListeMedecinsComponent implements OnInit {
     this.getMedecinsBySpecialiteVille();
   }else{
     this.getallMedecins();
+    
 
   }
   }
-  getMedecins(){
-    console.log(this.specialite);
-    console.log(this.ville);
-    this.router.navigate(['/', 'liste-medecins', this.specialite,this.ville])
-
-  }
+  
    getallMedecins() {
      this.MS.getallMedecin().subscribe(res=>{
         console.log(res);
         this.medecins= res;
+        console.log(this.medecins.length)
   
       })
   

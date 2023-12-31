@@ -23,6 +23,7 @@ import { PrendreRDVComponent } from './prendre-rdv/prendre-rdv.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     ModifierMedecinComponent,
     NavbarPagesComponent,
     ListeMedecinsComponent,
-    PrendreRDVComponent
+    PrendreRDVComponent,
+   
   ],
   imports: [
     BrowserModule,
@@ -52,6 +54,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     HttpClientModule,
     BrowserAnimationsModule,
     MatSnackBarModule,
+    Ng2SearchPipeModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

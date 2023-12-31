@@ -8,35 +8,36 @@
         <div class="hero-card">
 
           <p class="title-lg card-text">
-            Search doctors. clinics. hospitals. etc.
+            Search doctors
           </p>
 
-          <form  (ngSubmit)="getMedecins()">
+       
             <div class="wrapper revealed">
               
 
               <div class="input-wrapper title-lg revealed">
-                <input type="text" [(ngModel)]="specialite" name="specialite" placeholder="specialite" class="input-field">
+                <input type="text" [(ngModel)]="searchText"  name="specialite" placeholder="filtrer avec specialite ou ville ou nom" class="input-field">
               </div>
-              <div class="input-wrapper title-lg revealed">
+              <!-- <div class="input-wrapper title-lg revealed">
                 <input type="text" [(ngModel)]="ville" name="location" placeholder="Locations" class="input-field">
 
                 <ion-icon name="location"></ion-icon>
-              </div>
+              </div> -->
 
-              <button type="submit" class="btn has-before">
+              <!-- <button type="submit" class="btn has-before">
                 <ion-icon name="search"></ion-icon>
 
                 <span class="span title-md revealed">Find Now</span>
-              </button>
+              </button> -->
              </div>
-             </form>
+            
         </div>
 
       </div>
 
     </div>
   </section> 
+  <ng-container *ngIf="medecins.length>0;else ElseIf">
   <section class="section blog" aria-labelledby="blog-label">
     <div class="container">
 
@@ -45,10 +46,10 @@
       </p>
 
       <h2 class="section-title headline-md text-center revealed" data-reveal="bottom">Listes Medecins</h2>
-
+ 
       <ul class="grid-list">
 
-        <li *ngFor="let m of medecins; let i=index;">
+        <li *ngFor="let m of medecins | filter :searchText">
           <div class="blog-card has-before has-after revealed" data-reveal="bottom">
 
             <div class="meta-wrapper">
@@ -83,190 +84,27 @@
           </div>
         </li>
 
-        <!-- <li>
-          <div class="blog-card has-before has-after revealed" data-reveal="bottom">
-
-            <div class="meta-wrapper">
-
-              <div class="card-meta">
-                <ion-icon name="person-outline"></ion-icon>
-
-                <span class="span">By Admin</span>
-              </div>
-
-              <div class="card-meta">
-                <ion-icon name="folder-outline"></ion-icon>
-
-                <span class="span">Specialist</span>
-              </div>
-
-            </div>
-
-            <h3 class="headline-sm card-title">Give children more autonomy during the pandemic</h3>
-
-            <time class="title-sm date" datetime="2022-01-28">28 January, 2022</time>
-
-            <p class="card-text">
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-              labore et dolore magna aliquyam erat
-            </p>
-
-            <a href="#" class="btn-text title-lg">Read More</a>
-
-          </div>
-        </li> -->
-
-        <!-- <li>
-          <div class="blog-card has-before has-after revealed" data-reveal="bottom">
-
-            <div class="meta-wrapper">
-
-              <div class="card-meta">
-                <ion-icon name="person-outline"></ion-icon>
-
-                <span class="span">By Admin</span>
-              </div>
-
-              <div class="card-meta">
-                <ion-icon name="folder-outline"></ion-icon>
-
-                <span class="span">Specialist</span>
-              </div>
-
-            </div>
-
-            <h3 class="headline-sm card-title">How do binge eating and drinking impact the liver?</h3>
-
-            <time class="title-sm date" datetime="2022-01-28">28 January, 2022</time>
-
-            <p class="card-text">
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-              labore et dolore magna aliquyam erat
-            </p>
-
-            <a href="#" class="btn-text title-lg">Read More</a>
-
-          </div>
-        </li> -->
+      
 
       </ul>
 
     </div>
   </section>
+  </ng-container>
+  <ng-template #ElseIf>
+    <section class="section blog" aria-labelledby="blog-label">
+      <div class="container">
+  
+        <p class="section-subtitle title-lg text-center revealed" id="blog-label" data-reveal="bottom">
+          Listes Medecins
+        </p>
+  
+        <h2 class="section-title headline-md text-center revealed" data-reveal="bottom">il n'ya pas encore de medecins</h2>
+      </div>
+    </section>  
+
+  </ng-template>
 
 
-  <!-- <section class="section blog" aria-labelledby="blog-label">
-    <div class="container">
-
-      <p class="section-subtitle title-lg text-center" id="blog-label" data-reveal="bottom">
-        News & Article
-      </p>
-
-      <h2 class="section-title headline-md text-center" data-reveal="bottom">Latest Articles</h2>
-
-      <ul class="grid-list">
-
-        <li>
-          <div class="blog-card has-before has-after" data-reveal="bottom">
-
-            <div class="meta-wrapper">
-
-              <div class="card-meta">
-                <ion-icon name="person-outline"></ion-icon>
-
-                <span class="span">By Admin</span>
-              </div>
-
-              <div class="card-meta">
-                <ion-icon name="folder-outline"></ion-icon>
-
-                <span class="span">Specialist</span>
-              </div>
-
-            </div>
-
-            <h3 class="headline-sm card-title">Could intermittent fasting reduce breast cancer</h3>
-
-            <time class="title-sm date" datetime="2022-01-28">28 January, 2022</time>
-
-            <p class="card-text">
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-              labore et dolore magna aliquyam erat
-            </p>
-
-            <a href="#" class="btn-text title-lg">prendre un rdv</a>
-
-          </div>
-        </li>
-
-        <li>
-          <div class="blog-card has-before has-after" data-reveal="bottom">
-
-            <div class="meta-wrapper">
-
-              <div class="card-meta">
-                <ion-icon name="person-outline"></ion-icon>
-
-                <span class="span">By Admin</span>
-              </div>
-
-              <div class="card-meta">
-                <ion-icon name="folder-outline"></ion-icon>
-
-                <span class="span">Specialist</span>
-              </div>
-
-            </div>
-
-            <h3 class="headline-sm card-title">Give children more autonomy during the pandemic</h3>
-
-            <time class="title-sm date" datetime="2022-01-28">28 January, 2022</time>
-
-            <p class="card-text">
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-              labore et dolore magna aliquyam erat
-            </p>
-
-            <a href="#" class="btn-text title-lg">Read More</a>
-
-          </div>
-        </li>
-
-        <li>
-          <div class="blog-card has-before has-after" data-reveal="bottom">
-
-            <div class="meta-wrapper">
-
-              <div class="card-meta">
-                <ion-icon name="person-outline"></ion-icon>
-
-                <span class="span">By Admin</span>
-              </div>
-
-              <div class="card-meta">
-                <ion-icon name="folder-outline"></ion-icon>
-
-                <span class="span">Specialist</span>
-              </div>
-
-            </div>
-
-            <h3 class="headline-sm card-title">How do binge eating and drinking impact the liver?</h3>
-
-            <time class="title-sm date" datetime="2022-01-28">28 January, 2022</time>
-
-            <p class="card-text">
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-              labore et dolore magna aliquyam erat
-            </p>
-
-            <a href="#" class="btn-text title-lg">Read More</a>
-
-          </div>
-        </li>
-
-      </ul>
-
-    </div>
-  </section> -->
+  
 </div>
