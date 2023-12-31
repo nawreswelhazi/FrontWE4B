@@ -5,7 +5,7 @@ import { RdvService } from '../services/rdv.service';
 import { Rdv } from 'src/models/rdv';
 import { Patient } from 'src/models/patient';
 import { PatientService } from '../services/patient.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SessionService } from '../services/session.service';
 
 @Component({
@@ -22,8 +22,9 @@ export class PrendreRDVComponent implements OnInit {
   motif:any; //texte
   public CurrentUser !: Patient;
   public userId !: number | null;
+  public cuurentDoctorPhoto !: string;
 
-  constructor(private MS: MedecinServiceService, private rdvService: RdvService, private PS: PatientService, private router: Router, private sessionService: SessionService) { }
+  constructor(private MS: MedecinServiceService, private rdvService: RdvService, private PS: PatientService, private router: Router, private sessionService: SessionService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.generateDateOptions();
@@ -50,16 +51,24 @@ export class PrendreRDVComponent implements OnInit {
 }
 
   onGetUsers(){
-    this.MS.getMedecin(1).subscribe(
-      (data: Medecin) => {
-        console.log(data)
-        this.CurrentMedecin = data;
-        this.CurrentMedecin.photo = '../../assets/images/'+this.CurrentMedecin.photo
-      },
-      (err: any) => {
-        console.log("Le problème c'est", err);
-      }
-    );
+    const doctorId = this.route.snapshot.paramMap.get('id');
+    if (doctorId != null) {
+      this.MS.getMedecin(parseInt(doctorId)).subscribe(
+        (data: Medecin) => {
+          console.log(data)
+          this.CurrentMedecin = data;
+          if (this.CurrentMedecin.photo !== null)
+          {
+            this.cuurentDoctorPhoto = '../../assets/images/'+this.CurrentMedecin.photo
+          }
+          else this.cuurentDoctorPhoto = '../../assets/images/defaultPDP.jpg'
+          
+        },
+        (err: any) => {
+          console.log("Le problème c'est", err);
+        }
+      );
+    }
   }
 
   loadHeuresRDV(date: string) {

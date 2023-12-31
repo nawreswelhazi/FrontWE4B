@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute,Router } from '@angular/router';
 import { MedecinServiceService } from '../services/medecin-service.service';
+import { Medecin } from 'src/models/medecin';
 
 
 @Component({
@@ -55,6 +56,13 @@ export class ListeMedecinsComponent implements OnInit {
 
     })
 
+  }
+
+  prendreRendezVous(medecin: Medecin) {
+    console.log('Médecin sélectionné:', medecin);
+    const doctorId = medecin.id;
+    console.log(medecin.id)
+    this.router.navigate([`prendreRDV/${doctorId}`]);
   }
 
 
