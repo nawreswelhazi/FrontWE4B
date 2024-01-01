@@ -6,6 +6,9 @@ main {
 section {
   padding: 10%;
   padding-left: 0;
+ 
+ 
+  
 }
   
   #userProfile {
@@ -47,7 +50,7 @@ section {
   /* partie selest date */
 
   select {
-    color: #005BA6;
+    /* color: #005BA6; */
     display: block;
     border-radius: 0;
     box-shadow: none;
@@ -79,16 +82,16 @@ section {
     border-top-color: #D6D6D6;
     top: 55%;
   }
-
-  select:hover {
+  
+  /* select:hover {
     border-right: 3px solid #005BA6;
-  }
+  } */
   
 
    /* partie selest date */
 
   select {
-    color: #005BA6;
+    /* color: #005BA6; */
     display: block;
     border-radius: 0;
     box-shadow: none;
@@ -122,46 +125,10 @@ section {
   }
 
   select:hover {
-    border-right: 3px solid #005BA6;
+    border-right: 3px solid;
   }
 
-  /*bouton*/
-  .tryagain {
-		background-attachment: scroll;
-		background-clip: border-box;
-		background-color: rgb(123, 163, 150);
-		background-image: none;
-		background-origin: padding-box;
-		background-size: auto;
-		border-bottom-left-radius: 16px;
-		border-bottom-right-radius: 16px;
-		border-top-left-radius: 16px;
-		border-top-right-radius: 16px;
-		box-sizing: border-box;
-		color: rgb(255, 255, 255);
-		cursor: pointer;
-		display: inline-block;
-		font-family: 'Open Sans', sans-serif;
-		font-size: 20px;
-		font-stretch: normal;
-		font-style: normal;
-		font-variant: normal;
-		font-weight: normal;
-		height: 50px;
-		line-height: normal;
-		outline-width: 0px;
-		padding: 1%;
-		text-align: center;
-		text-transform: none;
-		transition-delay: 0s;
-		transition-duration: 0.28s;
-		transition-property: box-shadow;
-		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-		width: 200px;
-		z-index: 0;
-    justify-items: center;
-    margin-left: -150%;
-		}
+
 
 		a:link, a:hover, a:visited, a:active {
 			text-decoration: none;
@@ -170,5 +137,8 @@ section {
 
     .input-group {
       width: 50%;
+    }
+    button{
+      width: 175%;
     }
   

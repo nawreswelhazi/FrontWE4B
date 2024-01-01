@@ -80,14 +80,14 @@
                 </div>
 
                 <h3 class="headline-sm card-title revealed">
-                  <a href="#">Psychiatry</a>
+                  <a   [routerLink]="['/liste-medecins', 'psychiatrie','']" href="#">psychiatrie</a>
                 </h3>
 
                 <p class="card-text revealed">
                   Lorem ipsum dolor sit amet, consectetur adipisicing
                 </p>
 
-                <button class="btn-circle revealed" aria-label="read more about psychiatry">
+                <button [routerLink]="['/liste-medecins', 'psychiatrie','']" class="btn-circle revealed" aria-label="read more about psychiatry">
                   <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
                 </button>
 
@@ -102,14 +102,14 @@
                 </div>
 
                 <h3 class="headline-sm card-title revealed">
-                  <a href="#">Gynecology</a>
+                  <a [routerLink]="['/liste-medecins', 'gynécologie','']" href="#">gynécologie</a>
                 </h3>
 
                 <p class="card-text revealed">
                   Lorem ipsum dolor sit amet, consectetur adipisicing
                 </p>
 
-                <button class="btn-circle revealed" aria-label="read more about Gynecology">
+                <button [routerLink]="['/liste-medecins', 'gynécologie','']" class="btn-circle revealed" aria-label="read more about Gynecology">
                   <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
                 </button>
 
@@ -124,14 +124,14 @@
                 </div>
 
                 <h3 class="headline-sm card-title revealed">
-                  <a href="#">Pulmonology</a>
+                  <a [routerLink]="['/liste-medecins', 'pneumologie','']" href="#">pneumologie</a>
                 </h3>
 
                 <p class="card-text revealed">
                   Lorem ipsum dolor sit amet, consectetur adipisicing
                 </p>
 
-                <button class="btn-circle revealed" aria-label="read more about Pulmonology">
+                <button  [routerLink]="['/liste-medecins', 'pneumologie','']" class="btn-circle revealed" aria-label="read more about Pulmonology">
                   <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
                 </button>
 
@@ -146,14 +146,14 @@
                 </div>
 
                 <h3 class="headline-sm card-title revealed">
-                  <a href="#">Orthopedics</a>
+                  <a [routerLink]="['/liste-medecins', 'généraliste','']" href="#"> généraliste </a>
                 </h3>
 
                 <p class="card-text revealed">
                   Lorem ipsum dolor sit amet, consectetur adipisicing
                 </p>
 
-                <button class="btn-circle revealed" aria-label="read more about Orthopedics">
+                <button [routerLink]="['/liste-medecins', 'généraliste','']" class="btn-circle revealed" aria-label="read more about Orthopedics">
                   <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
                 </button>
 
@@ -269,15 +269,15 @@
               <h2 class="headline-md revealed" data-reveal="left">Browse by specialist</h2>
             </li>
 
-            <li>
-              <div class="listing-card revealed" data-reveal="bottom">
+            <li [routerLink]="['/liste-medecins', 'psychiatrie','']">
+              <div  class="listing-card revealed" data-reveal="bottom">
 
                 <div class="card-icon">
                   <img src="assets/images/icon-1.png" width="71" height="71" loading="lazy" alt="icon">
                 </div>
 
                 <div>
-                  <h3 class="headline-sm card-title">Psychiatry</h3>
+                  <h3  class="headline-sm card-title">psychiatrie</h3>
 
                   <p class="card-text">Porta velit</p>
                 </div>
@@ -285,7 +285,7 @@
               </div>
             </li>
 
-            <li>
+            <li [routerLink]="['/liste-medecins', 'gynécologie','']">
               <div class="listing-card revealed" data-reveal="bottom">
 
                 <div class="card-icon">
@@ -293,7 +293,7 @@
                 </div>
 
                 <div>
-                  <h3 class="headline-sm card-title">Gynecology</h3>
+                  <h3  class="headline-sm card-title">gynécologie</h3>
 
                   <p class="card-text">Mattis augue</p>
                 </div>
@@ -301,7 +301,7 @@
               </div>
             </li>
 
-            <li>
+            <li [routerLink]="['/liste-medecins', 'pneumologie','']">
               <div class="listing-card revealed" data-reveal="bottom">
 
                 <div class="card-icon">
@@ -309,7 +309,7 @@
                 </div>
 
                 <div>
-                  <h3 class="headline-sm card-title">Pulmonology</h3>
+                  <h3  class="headline-sm card-title">pneumologie</h3>
 
                   <p class="card-text">Mauris laoreet</p>
                 </div>
@@ -317,7 +317,7 @@
               </div>
             </li>
 
-            <li>
+            <li [routerLink]="['/liste-medecins', 'orthopédie','']">
               <div class="listing-card revealed" data-reveal="bottom">
 
                 <div class="card-icon">
@@ -325,7 +325,7 @@
                 </div>
 
                 <div>
-                  <h3 class="headline-sm card-title">Orthopedics</h3>
+                  <h3  class="headline-sm card-title">orthopédie</h3>
 
                   <p class="card-text">Convallis vulputate</p>
                 </div>
@@ -333,7 +333,7 @@
               </div>
             </li>
 
-            <li>
+            <li [routerLink]="['/liste-medecins', 'pédiatrie','']">
               <div class="listing-card revealed" data-reveal="bottom">
 
                 <div class="card-icon">
@@ -341,7 +341,7 @@
                 </div>
 
                 <div>
-                  <h3 class="headline-sm card-title">Pediatrics</h3>
+                  <h3  class="headline-sm card-title">pédiatrie</h3>
 
                   <p class="card-text">Posuere maecenas</p>
                 </div>
@@ -349,7 +349,7 @@
               </div>
             </li>
 
-            <li>
+            <li [routerLink]="['/liste-medecins', 'ostéologie','']">
               <div class="listing-card revealed" data-reveal="bottom">
 
                 <div class="card-icon">
@@ -357,7 +357,7 @@
                 </div>
 
                 <div>
-                  <h3 class="headline-sm card-title">Osteology</h3>
+                  <h3  class="headline-sm card-title">ostéologie</h3>
 
                   <p class="card-text">Nisi nullam</p>
                 </div>

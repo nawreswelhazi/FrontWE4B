@@ -13,10 +13,24 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  specialiteChoisit(data:string){
+    this.specialite=data;
+    // this.getMedecins();
+    console.log(data);
+
+  }
   getMedecins(){
+    // console.log(this.specialite);
+    // console.log(this.ville);
+    if(this.specialite==undefined){
+      this.specialite="";
+    }
+    if(this.ville==undefined){
+      this.ville="";
+    }
     console.log(this.specialite);
     console.log(this.ville);
-    this.router.navigate(['/', 'liste-medecins', this.specialite,this.ville])
+    this.router.navigate(['/', 'liste-medecins', this.specialite,this.ville]);
 
   }
   rendezVous(){

@@ -35,11 +35,11 @@
                     </select>
                 </div>
                 <br>
-                <div class="input-group">
+                <div class="input-field">
                     <span class="input-group-text">Motif</span>
                     <textarea class="form-control" aria-label="With textarea" [ngModel]="motif" (ngModelChange)="onChangeMotif($event)"></textarea>
                 </div>
-                <a (click)="addRDV()" class="tryagain">Sauvegarder</a>
+                <button (click)="addRDV()" class="btn title-md has-before"> Sauvegarder </button>
             </div>
         </section>
     </article>

@@ -22,14 +22,19 @@ export class ListeMedecinsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.specialite = this.activatedroute.snapshot.params['specialite']||null;
+   this.specialite = this.activatedroute.snapshot.params['specialite']||null;
   this.ville = this.activatedroute.snapshot.params['ville']||null;
   console.log(this.specialite);
   console.log(this.ville);
   
   if(this.specialite!=null && this.ville!=null ){
     this.getMedecinsBySpecialiteVille();
-  }else{
+  }else if(this.specialite!=null){
+    this.getMedecinsBySpecialite();
+  }else if(this.ville!=null){
+    this.getMedecinsByVille();
+  }
+  else{
     this.getallMedecins();
     
 
@@ -49,6 +54,22 @@ export class ListeMedecinsComponent implements OnInit {
    }
   getMedecinsBySpecialiteVille(){
     this.MS.getMedecinsBySpecialiteVille(this.specialite,this.ville).subscribe(res=>{
+      console.log(res);
+      this.medecins= res;
+
+    })
+
+  }
+  getMedecinsBySpecialite(){
+    this.MS.getMedecinsBySpecialite(this.specialite).subscribe(res=>{
+      console.log(res);
+      this.medecins= res;
+
+    })
+
+  }
+  getMedecinsByVille(){
+    this.MS.getMedecinsByVille(this.ville).subscribe(res=>{
       console.log(res);
       this.medecins= res;
 

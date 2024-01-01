@@ -26,5 +26,11 @@ export class MedecinServiceService {
   getMedecinsBySpecialiteVille(specialite: string, ville:string):Observable<Medecin[]>{
     return this.http.get<Medecin[]>(`${this.hostMed + '/getMedecinsBySpecialiteVille'}/${specialite}/${ville}`);
   }
+  getMedecinsBySpecialite(specialite: string):Observable<Medecin[]>{
+    return this.http.get<Medecin[]>(`${this.hostMed + '/getMedecinsBySpecialite'}/${specialite}`);
+  }
+  getMedecinsByVille(ville: string):Observable<Medecin[]>{
+    return this.http.get<Medecin[]>(`${this.hostMed + '/getMedecinsByVille'}/${ville}`);
+  }
 
 }

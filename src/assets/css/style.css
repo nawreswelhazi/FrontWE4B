@@ -474,7 +474,7 @@ a {
 
 .hero-card .input-wrapper { position: relative; }
 
-.hero-card .input-field {
+.hero-card .input-field ,select {
   color: var(--eerie-black);
   border-block-end: 1px solid var(--gainsboro);
   padding-inline-end: 18px;
@@ -781,9 +781,9 @@ a {
   border-radius: var(--radius-4);
   padding: 8px 20px;
 }
-.form .input-field {
+.form .input-field , select {
   color: black;
-  border-radius: var(--radius-12);
+  border-radius: var(--radius-12) !important;
   border: 2px solid var(--alice-blue);
   padding: 8px 20px;
 }
@@ -914,7 +914,7 @@ a {
 
   .hero-card .input-wrapper { flex-grow: 1; }
 
-  .hero-card .input-field { height: 100%; }
+  .hero-card .input-field ,select { height: 100%; }
 
   .hero-card .btn {
     width: max-content;

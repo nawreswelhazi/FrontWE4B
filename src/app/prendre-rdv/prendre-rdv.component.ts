@@ -17,8 +17,9 @@ export class PrendreRDVComponent implements OnInit {
   dateOptions: string[] = [];
   heuresOptions: string[] = [];
   public CurrentMedecin !: Medecin; //Le medecin qu'il a choisit pour prendre un rdv
-  getvalue:any; //date selectionnée
-  getTime:any;
+  getvalue:any=""; //date selectionnée
+  
+  getTime:any="";
   motif:any; //texte
   public CurrentUser !: Patient;
   public userId !: number | null;
@@ -31,6 +32,7 @@ export class PrendreRDVComponent implements OnInit {
     this.onGetUsers();
     this.userId = this.sessionService.getUserId();
     this.onGetPatient();
+    
   }
 
   generateDateOptions() {
