@@ -79,7 +79,7 @@
               labore et dolore magna aliquyam erat
             </p>
 
-            <a (click)="prendreRendezVous(m)" class="btn-text title-lg">Prendre rendez-vous</a>
+            <a *ngIf="userRole != null" (click)="prendreRendezVous(m)" class="btn-text title-lg">Prendre rendez-vous</a>
 
           </div>
         </li>

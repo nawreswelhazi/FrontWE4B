@@ -22,4 +22,8 @@ export class RdvService {
   getRDVMedecin(id: number):Observable<any>{
     return this.http.get<any>(`${this.hostRDV + '/getMedecin'}/${id}`);
   }
+
+  deleteRDV(id: number):Observable<any>{
+    return this.http.delete<any>(`${this.hostRDV + '/delete'}/${id}`);
+  }
 }
