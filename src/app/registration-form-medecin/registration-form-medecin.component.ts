@@ -1,6 +1,9 @@
+import { MedecinServiceService } from './../services/medecin-service.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormGroup, Validators } from '@angular/forms';
 import { Medecin } from 'src/models/medecin';
+import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-registration-form-medecin',
@@ -9,7 +12,7 @@ import { Medecin } from 'src/models/medecin';
 })
 export class RegistrationFormMedecinComponent implements OnInit {
   registrationFormMedecin!: FormGroup;
-  constructor(private fb : FormBuilder) { }
+  constructor(private fb : FormBuilder, private PS: MedecinServiceService, private router: Router, private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.registrationFormMedecin = this.fb.group({
@@ -22,9 +25,10 @@ export class RegistrationFormMedecinComponent implements OnInit {
       mail: ['', [Validators.required, Validators.email]],
       codeINE: ['', Validators.required],
       specialite: ['', Validators.required],
-      prix: [null, [Validators.required, Validators.min(0)]],
-      presentation: ['', Validators.required],
       experience: [null, [Validators.required, Validators.min(0)]],
+      prix: [null, [Validators.required, Validators.min(0)]],
+      ville: ['', Validators.required],
+      presentation: ['', Validators.required],
       mdp: ['', Validators.required],
       mdpCheck: ['', Validators.required]
     });
@@ -43,10 +47,25 @@ export class RegistrationFormMedecinComponent implements OnInit {
         this.registrationFormMedecin.value.mdp,
         this.registrationFormMedecin.value.codeINE,
         this.registrationFormMedecin.value.specialite,
-        this.registrationFormMedecin.value.prix,
-        this.registrationFormMedecin.value.presentation,
         this.registrationFormMedecin.value.experience,
+        this.registrationFormMedecin.value.prix,
+        this.registrationFormMedecin.value.ville,
+        this.registrationFormMedecin.value.presentation,
       );
+      this.PS.addMedecin(medecin).subscribe(
+        (result) => {
+          console.log('RDV added successfully:', result);
+          this.router.navigate(['']);
+          this.snackBar.open('Compte créé avec succès', 'Fermer', {
+            duration: 4000, // Durée en millisecondes pour afficher le message
+          });
+        },
+        (error) => {
+          console.error('Error creating Medecin:', error);
+          this.snackBar.open('Mail ou code INE existant', 'Fermer', {
+            duration: 4000, // Durée en millisecondes pour afficher le message
+          });
+        })
       console.log('Medecin:', medecin);
     }else{
       alert("mdp different");
