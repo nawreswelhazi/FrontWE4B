@@ -1,1 +1,54 @@
-<p>modifier-medecin works!</p>
+<app-navbar-pages></app-navbar-pages>
+
+<br>
+<main>
+  <article>
+  <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <h2>Formulaire de modification</h2>
+          <form [formGroup]="medecinProfileForm" (ngSubmit)="submit()" class="form">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Nom Prénom : {{medecin.nom}} {{medecin.prenom}}</li>
+              <li class="list-group-item">Age : {{medecin.age}}</li>
+              <li class="list-group-item">Sexe :
+                <div *ngIf="medecin.sexe==0">Homme</div>
+                <div *ngIf="medecin.sexe==1">Femme</div>
+              </li>
+              <li class="list-group-item">Adresse : {{medecin.adresse}}</li>
+              <li class="list-group-item">Mail : {{medecin.mail}}</li>
+              <li class="list-group-item">Code INE : {{medecin.codeINE}}</li>
+              <li class="list-group-item">Specialité : {{medecin.specialite}}</li>
+              <li class="list-group-item">
+                <div class="form-group">
+                  <label for="experience">Expérience :</label>
+                  <input type="number" class="input-field title-lg" id="experience" formControlName="experience" placeholder="{{ medecin.experience }}" required>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="form-group">
+                  <label for="prix">Prix :</label>
+                  <input type="number" step="0.01" class="input-field title-lg" formControlName="prix" id="prix" placeholder="{{ medecin.prix }}" required>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="form-group">
+                  <label for="ville">Ville :</label>
+                  <input type="text" class="input-field title-lg" formControlName="ville" id="ville" placeholder="{{ medecin.ville }}" required>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="form-group">
+                  <label for="presentation">Présentation :</label>
+                  <input type="text" class="input-field title-lg" formControlName="presentation" id="presentation" placeholder="{{ medecin.presentation }}" required>
+                </div>
+              </li>
+              <li class="list-group-item">Mot de passe : {{medecin.mdp}}</li>
+              </ul>
+            <button type="submit" class="btn has-before title-md">Inscription</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </article>
+</main>

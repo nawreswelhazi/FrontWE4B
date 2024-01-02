@@ -28,7 +28,6 @@ export class LoginFormComponent implements OnInit {
       this.loginForm.value.mail,
       this.loginForm.value.mdp
     ];
-    console.log("aaaa")
     this.PS.getPersonne(compte[0], compte[1]).subscribe(
       (result) => {
         console.log('Credentials trouvés:', result);
@@ -58,6 +57,5 @@ export class LoginFormComponent implements OnInit {
           duration: 4000, // Durée en millisecondes pour afficher le message
         });
       })
-    console.log("login:",compte);
   }
 }

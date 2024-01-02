@@ -18,4 +18,7 @@ export class PatientService {
   addPatient(p: Patient):Observable<Patient>{
     return this.http.post<Patient>(`${this.hostPatient + '/new'}`, p);
   }
+  updatePatient(id:number, p:Patient):Observable<Patient>{
+    return this.http.put<Patient>(`${this.hostPatient + '/update'}/${id}`,p);
+  }
 }

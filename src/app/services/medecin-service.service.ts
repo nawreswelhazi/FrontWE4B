@@ -20,6 +20,12 @@ export class MedecinServiceService {
   getallMedecin():Observable<Medecin[]>{
     return this.http.get<Medecin[]>(`${this.hostMed + '/all'}`);
   }
+  addMedecin(m: Medecin):Observable<Medecin>{
+    return this.http.post<Medecin>(`${this.hostMed + '/new'}`, m);
+  }
+  updateMedecin(id:number, m:Medecin):Observable<Medecin>{
+    return this.http.put<Medecin>(`${this.hostMed + '/update'}/${id}`,m);
+  }
 
   loadHeures(id: number, date:string):Observable<string[]>{
     return this.http.get<string[]>(`${this.hostRDV + '/getRDVMedecinExist'}/${id}/${date}`);
