@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Medecin } from 'src/models/medecin';
+import {Patient} from "../../models/patient";
 
 @Injectable({
   providedIn: 'root'
@@ -32,5 +33,7 @@ export class MedecinServiceService {
   getMedecinsByVille(ville: string):Observable<Medecin[]>{
     return this.http.get<Medecin[]>(`${this.hostMed + '/getMedecinsByVille'}/${ville}`);
   }
-
+  registerMedecin(m: Medecin):Observable<Medecin>{
+    return this.http.post<Medecin>(`{$this.hostMed + '/new'}`,m);
+  }
 }
