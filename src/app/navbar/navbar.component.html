@@ -20,24 +20,27 @@
       </div>
 
       <ul class="navbar-list">
-
         <li *ngIf="userRole !== 'medecin'" class="navbar-item">
-          <a  href="#" class="navbar-link title-md" routerLink="">Home</a>
+          <a href="#" class="navbar-link title-md" routerLink="">Home</a>
         </li>
 
         <li class="navbar-item" *ngIf="userRole !== 'medecin'">
           <a href="#" class="navbar-link title-md" routerLink="/liste-medecins">Doctors</a>
         </li>
 
+        <li *ngIf="userRole === 'patient'" class="navbar-item">
+          <a href="#" class="navbar-link title-md" routerLink="/modifier-patient">Compte</a>
+        </li>
+
+        <li *ngIf="userRole === 'medecin'" class="navbar-item">
+          <a href="#" class="navbar-link title-md" routerLink="/modifier-medecin">Compte</a>
+        </li>
+
         <li *ngIf="userRole != null" class="navbar-item">
           <a href="#" class="navbar-link title-md" routerLink="/MesRDV">Mes RDV</a>
         </li>
-
-        <li *ngIf="userRole != null" class="navbar-item">
-          <a href="#" class="navbar-link title-md" routerLink="/profile">Compte</a>
-        </li>
-
       </ul>
+
 
       <ul class="social-list">
 
