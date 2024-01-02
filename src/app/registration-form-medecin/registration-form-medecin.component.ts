@@ -13,69 +13,73 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./registration-form-medecin.component.css']
 })
 export class RegistrationFormMedecinComponent implements OnInit {
-  registrationFormMedecin!: FormGroup;
+    registrationFormMedecin!: FormGroup;
 
-  constructor(
-    private fb: FormBuilder,
-    private medecinService: MedecinServiceService,
-    private router: Router,
-    private snackBar: MatSnackBar
-  ) {}
-
-  ngOnInit(): void {
-    this.registrationFormMedecin = this.fb.group({
-      id: [null, Validators.required],
-      nom: ['', Validators.required],
-      prenom: ['', Validators.required],
-      age: [null, [Validators.required, Validators.min(0)]],
-      sexe: ['', Validators.required],
-      adresse: ['', Validators.required],
-      mail: ['', [Validators.required, Validators.email]],
-      codeINE: ['', Validators.required],
-      specialite: ['', Validators.required],
-      prix: [null, [Validators.required, Validators.min(0)]],
-      presentation: ['', Validators.required],
-      experience: [null, [Validators.required, Validators.min(0)]],
-      mdp: ['', Validators.required],
-      mdpCheck: ['', Validators.required]
-    });
-  }
-
-  submit() {
-    if (this.registrationFormMedecin.value.mdp === this.registrationFormMedecin.value.mdpCheck) {
-      const sexe: number = this.registrationFormMedecin.value.sexe === 'homme' ? 0 : 1;
-      const medecin: Medecin = new Medecin(
-        this.registrationFormMedecin.value.nom,
-        this.registrationFormMedecin.value.prenom,
-        this.registrationFormMedecin.value.age,
-        sexe,
-        this.registrationFormMedecin.value.adresse,
-        this.registrationFormMedecin.value.mail,
-        this.registrationFormMedecin.value.mdp,
-        this.registrationFormMedecin.value.codeINE,
-        this.registrationFormMedecin.value.specialite,
-        this.registrationFormMedecin.value.prix,
-        this.registrationFormMedecin.value.presentation,
-        this.registrationFormMedecin.value.experience
-      );
-
-      this.medecinService.registerMedecin(medecin).subscribe(
-        (result: any) => {
-          console.log('Medecin registered successfully:', result);
-          this.router.navigate(['/']);  // Redirect to the home page or a confirmation page
-          this.snackBar.open('Compte créé avec succès', 'Fermer', {
-            duration: 4000
-          });
-        },
-        (error: any) => {
-          console.error('Error registering Medecin:', error);
-          this.snackBar.open('Mail ou Code INE existant', 'Fermer', {
-            duration: 4000
-          });
-        }
-      );
-    } else {
-      alert('mdp different');
+    constructor(
+        private fb: FormBuilder,
+        private medecinService: MedecinServiceService,
+        private router: Router,
+        private snackBar: MatSnackBar
+    ) {
     }
-  }
+
+    ngOnInit(): void {
+        this.registrationFormMedecin = this.fb.group({
+            id: [null, Validators.required],
+            nom: ['', Validators.required],
+            prenom: ['', Validators.required],
+            age: [null, [Validators.required, Validators.min(0)]],
+            sexe: ['', Validators.required],
+            adresse: ['', Validators.required],
+            mail: ['', [Validators.required, Validators.email]],
+            codeINE: ['', Validators.required],
+            specialite: ['', Validators.required],
+            prix: [null, [Validators.required, Validators.min(0)]],
+            presentation: ['', Validators.required],
+            experience: [null, [Validators.required, Validators.min(0)]],
+            mdp: ['', Validators.required],
+            mdpCheck: ['', Validators.required]
+        });
+    }
+
+    submit() {
+        if (this.registrationFormMedecin.value.mdp === this.registrationFormMedecin.value.mdpCheck) {
+            const sexe: number = this.registrationFormMedecin.value.sexe === 'homme' ? 0 : 1;
+            const medecin: Medecin = new Medecin(
+                this.registrationFormMedecin.value.nom,
+                this.registrationFormMedecin.value.prenom,
+                this.registrationFormMedecin.value.age,
+                sexe,
+                this.registrationFormMedecin.value.adresse,
+                this.registrationFormMedecin.value.mail,
+                this.registrationFormMedecin.value.mdp,
+                this.registrationFormMedecin.value.codeINE,
+                this.registrationFormMedecin.value.specialite,
+                this.registrationFormMedecin.value.prix,
+                this.registrationFormMedecin.value.presentation,
+                this.registrationFormMedecin.value.experience
+            );
+
+            this.medecinService.addMedecin(medecin).subscribe(
+                (result: any) => {
+                    console.log('Medecin registered successfully:', result);
+                    this.router.navigate(['/']);
+                    this.snackBar.open('Compte créé avec succès', 'Fermer', {duration: 4000});
+                },
+                (error: any) => {
+                    console.error('Error registering Medecin:', error);
+
+                    // Log the entire HTTP response
+                    console.log('Full HTTP Response:', error);
+
+                    if (error.status === 409) {
+                        this.snackBar.open('Mail ou Code INE existant', 'Fermer', {duration: 4000});
+                    } else {
+                        // Handle other error cases as needed
+                    }
+                }
+            );
+
+        }
+    }
 }
