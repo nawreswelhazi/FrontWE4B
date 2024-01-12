@@ -76,11 +76,12 @@ export class RegistrationFormMedecinComponent implements OnInit {
                     this.registrationFormMedecin.value.mdp,
                     enteredCodeINE,
                     this.registrationFormMedecin.value.specialite,
+                    this.registrationFormMedecin.value.experience,
                     this.registrationFormMedecin.value.prix,
-                    this.registrationFormMedecin.value.presentation,
-                    this.registrationFormMedecin.value.experience
+                    this.registrationFormMedecin.value.ville,
+                    this.registrationFormMedecin.value.presentation
                 );
-
+                console.log(medecin)
                 this.medecinService.addMedecin(medecin).subscribe(
                     (result: any) => {
                         console.log('Medecin registered successfully:', result);

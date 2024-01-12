@@ -13,8 +13,8 @@ body {
 .container {
   max-width: 800px;
   margin: auto;
-  margin-top: 10rem;
   padding: 20px;
+
 }
 
 .row {
@@ -36,13 +36,20 @@ body {
   padding: 15px;
   font-size: 16px;
   background-color: #fff;
+  font-size: 14px;
 }
 
 .list-group-item:nth-child(even) {
   background-color: #9fd3c7;
+  font-size: 14px;
 }
 
 .list-group-item strong {
   font-weight: bold;
+  font-size: 14px;
+}
+
+button{
+  font-size: 14px;
 }
 

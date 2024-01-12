@@ -1,5 +1,9 @@
 @import '@angular/material/prebuilt-themes/indigo-pink.css';
 
+main {
+  height: 100%; /* ou une valeur appropriée */
+  overflow: auto; /* ou overflow: scroll; */
+}
 
 .container{
     display: flex;

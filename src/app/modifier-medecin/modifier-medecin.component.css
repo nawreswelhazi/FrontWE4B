@@ -13,14 +13,14 @@ body {
 .container {
   max-width: 800px;
   margin: auto;
-  margin-top: 10rem;
   padding: 20px;
   justify-content: center;
 }
 
 .row {
   text-align: center;
-  margin: 2rem;
+  margin: auto;
+  width: auto;
 }
 
 .list-group {
@@ -45,4 +45,5 @@ body {
 .list-group-item strong {
   font-weight: bold;
 }
+
 

@@ -46,8 +46,4 @@ body {
   font-weight: bold;
 }
 
-main {
-  height: 100%; /* ou une valeur appropriée */
-  overflow: auto; /* ou overflow: scroll; */
-  width: 100%;
-}
+

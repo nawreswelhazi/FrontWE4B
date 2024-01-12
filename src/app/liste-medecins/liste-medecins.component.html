@@ -1,4 +1,5 @@
-<app-navbar></app-navbar>
+<main>
+  <app-navbar></app-navbar>
 <div class="liste">
 <section class="section hero" style="background-image: url('assets/images/hero-bg.png')" aria-label="home">
     <div class="container">
@@ -8,12 +9,12 @@
         <div class="hero-card">
 
           <p class="title-lg card-text">
-           <strong>Search doctors</strong> 
+           <strong>Search doctors</strong>
           </p>
 
-       
+
             <div class="wrapper revealed">
-              
+
 
               <div class="input-wrapper title-lg revealed">
                 <input type="text" [(ngModel)]="searchText"  name="specialite" placeholder="filtrer avec specialite ou ville ou nom" class="input-field">
@@ -30,13 +31,13 @@
                 <span class="span title-md revealed">Find Now</span>
               </button> -->
              </div>
-            
+
         </div>
 
       </div>
 
     </div>
-  </section> 
+  </section>
   <ng-container *ngIf="medecins.length>0;else ElseIf">
   <section class="section blog" aria-labelledby="blog-label">
     <div class="container">
@@ -46,7 +47,7 @@
       </p>
 
       <h2 class="section-title headline-md text-center revealed" data-reveal="bottom">Listes Medecins</h2>
- 
+
       <ul class="grid-list">
 
         <li *ngFor="let m of medecins | filter :searchText">
@@ -84,7 +85,7 @@
           </div>
         </li>
 
-      
+
 
       </ul>
 
@@ -94,17 +95,19 @@
   <ng-template #ElseIf>
     <section class="section blog" aria-labelledby="blog-label">
       <div class="container">
-  
+
         <p class="section-subtitle title-lg text-center revealed" id="blog-label" data-reveal="bottom">
           Listes Medecins
         </p>
-  
+
         <h2 class="section-title headline-md text-center revealed" data-reveal="bottom">il n'ya pas encore de medecins</h2>
       </div>
-    </section>  
+    </section>
 
   </ng-template>
 
 
-  
+
 </div>
+<app-footer></app-footer>
+</main>

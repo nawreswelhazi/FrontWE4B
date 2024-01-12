@@ -3,7 +3,7 @@
   <article>
   <div class="container mt-5">
       <div class="row justify-content-center">
-        <div class="col-md-6">
+        <div class="col">
           <h2>Formulaire de modification</h2>
           <form [formGroup]="medecinProfileForm" (ngSubmit)="submit()" class="form">
             <ul class="list-group list-group-flush">
@@ -42,10 +42,13 @@
                 </div>
               </li>
               </ul>
-            <button type="submit" class="btn has-before title-md">Sauvegarder</button>
+              <div class="form-group d-flex justify-content-center p-2">
+                <button type="submit" class="btn has-before title-md">Sauvegarder</button>
+              </div>
           </form>
         </div>
       </div>
     </div>
   </article>
+  <app-footer></app-footer>
 </main>
