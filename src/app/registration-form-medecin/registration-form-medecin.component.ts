@@ -56,8 +56,7 @@ export class RegistrationFormMedecinComponent implements OnInit {
     }
 
     submit() {
-      console.log('Entered codeINE:', this.registrationFormMedecin.value.codeINE);
-      console.log('Valid doctor codes:', this.doctorCodes);
+
         if (this.registrationFormMedecin.value.mdp === this.registrationFormMedecin.value.mdpCheck) {
             const sexe: number = this.registrationFormMedecin.value.sexe === 'homme' ? 0 : 1;
             const enteredCodeINE = this.registrationFormMedecin.value.codeINE;
