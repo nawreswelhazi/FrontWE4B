@@ -134,6 +134,7 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
+              "src/assets/doctor-codes.json",
               {
                 "glob": "**/*.svg",
                 "input": "node_modules/ionicons/dist/ionicons/svg",
