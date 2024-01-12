@@ -19,7 +19,7 @@ export class NavbarComponent implements OnInit {
 
   logout(): void {
     this.sessionService.clearSession();
-    window.location.reload()
+    this.router.navigate(['']);
   }
 
 }

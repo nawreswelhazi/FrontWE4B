@@ -20,3 +20,15 @@ h1{
   align-items: center;
   height: 100%;
 }
+
+ul{
+  padding: 20px;
+  border: 4px solid #056d6e ;
+  border-radius: 15px;
+  display: inline-flex;
+  background-color: #9fd3c7;
+}
+
+li{
+  width: 500px;
+}
