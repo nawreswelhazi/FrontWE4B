@@ -1,60 +1,48 @@
-.card {
-  width: auto;
-  margin: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease-in-out;
+main {
+  height: 100%; /* ou une valeur appropriée */
+  overflow: auto; /* ou overflow: scroll; */
 }
 
-.card:hover {
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
 }
 
-.card-body {
-  background-color: #007bff;
-  color: #fff;
+.container {
+  max-width: 800px;
+  margin: auto;
+  margin-top: 10rem;
+  padding: 20px;
+  justify-content: center;
+}
+
+.row {
   text-align: center;
-  padding: 10px;
-  border-bottom: 2px solid #0056b3;
+  margin: 2rem;
 }
 
-.card-title {
-  font-size: 1.5rem;
-  font-weight: bold;
+.list-group {
+  width: 100%;
+  margin-top: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 .list-group-item {
   border: none;
+  padding: 15px;
+  font-size: 16px;
+  background-color: #fff;
 }
 
-.list-group-item:nth-child(odd) {
-  background-color: #f8f9fa;
+.list-group-item:nth-child(even) {
+  background-color: #9fd3c7;
 }
 
-.list-group-item:hover {
-  background-color: #e2e6ea;
+.list-group-item strong {
+  font-weight: bold;
 }
 
-button {
-  background-color: #ffffff;
-  color: #000;
-  border: none;
-  padding: 10px 15px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
-}
-
-button:hover {
-  background-color: #f0f0f0;
-}
-
-main{
-  height: 100%;
-  overflow: auto;
-}
-.container {
-  overflow-y: auto;
-  max-height: 70vh;
-}
