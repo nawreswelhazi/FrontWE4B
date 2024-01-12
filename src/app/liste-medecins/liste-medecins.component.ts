@@ -17,8 +17,8 @@ export class ListeMedecinsComponent implements OnInit {
   searchText:any;
   public userRole !: string | null;
 
-  constructor(private activatedroute : ActivatedRoute,private MS: MedecinServiceService,private router:Router, private sessionService : SessionService) { 
-  
+  constructor(private activatedroute : ActivatedRoute,private MS: MedecinServiceService,private router:Router, private sessionService : SessionService) {
+
 
 
   }
@@ -29,7 +29,7 @@ export class ListeMedecinsComponent implements OnInit {
   this.ville = this.activatedroute.snapshot.params['ville']||null;
   console.log(this.specialite);
   console.log(this.ville);
-  
+
   if(this.specialite!=null && this.ville!=null ){
     this.getMedecinsBySpecialiteVille();
   }else if(this.specialite!=null){
@@ -39,21 +39,21 @@ export class ListeMedecinsComponent implements OnInit {
   }
   else{
     this.getallMedecins();
-    
+
 
   }
   }
-  
+
    getallMedecins() {
      this.MS.getallMedecin().subscribe(res=>{
         console.log(res);
         this.medecins= res;
         console.log(this.medecins.length)
-  
+
       })
-  
-    
-  
+
+
+
    }
   getMedecinsBySpecialiteVille(){
     this.MS.getMedecinsBySpecialiteVille(this.specialite,this.ville).subscribe(res=>{

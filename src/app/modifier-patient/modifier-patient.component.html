@@ -1,11 +1,9 @@
 <app-navbar></app-navbar>
-
-<br>
 <main>
   <article>
   <div class="container mt-5">
       <div class="row justify-content-center">
-        <div class="col-md-6">
+        <div class="col">
           <h2>Formulaire de modification</h2>
           <form [formGroup]="patientProfileForm" (ngSubmit)="submit()" class="form">
             <ul class="list-group list-group-flush">
@@ -17,8 +15,8 @@
                 </div>
               </li>
               <li class="list-group-item">Sexe :
-                <div *ngIf="patient.sexe==0">Homme</div>
-                <div *ngIf="patient.sexe==1">Femme</div>
+                <span *ngIf="patient.sexe==0">Homme</span>
+                <span *ngIf="patient.sexe==1">Femme</span>
               </li>
               <li class="list-group-item">
                 <div class="form-group">
@@ -43,7 +41,9 @@
               <li class="list-group-item">Assurance : {{patient.num_assurance}}</li>
               <li class="list-group-item">Mot de passe : {{patient.mdp}}</li>
               </ul>
-            <button type="submit" class="btn has-before title-md">Inscription</button>
+              <div class="form-group d-flex justify-content-center p-2">
+                <button type="submit" class="btn has-before title-md">Sauvegarder</button>
+              </div>
           </form>
         </div>
       </div>

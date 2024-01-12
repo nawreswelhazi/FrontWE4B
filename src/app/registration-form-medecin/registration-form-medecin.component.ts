@@ -35,6 +35,7 @@ export class RegistrationFormMedecinComponent implements OnInit {
             codeINE: ['', Validators.required],
             specialite: ['', Validators.required],
             prix: [null, [Validators.required, Validators.min(0)]],
+            ville:['', Validators.required],
             presentation: ['', Validators.required],
             experience: [null, [Validators.required, Validators.min(0)]],
             mdp: ['', Validators.required],

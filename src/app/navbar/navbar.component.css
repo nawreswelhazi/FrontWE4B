@@ -1,18 +1,19 @@
 header {
     background-color: var(--midnight-green);
+    position: relative;
 }
 a:hover {
     color: white !important;
     text-decoration: none !important;
 }
 /*body {
-    background-color: #ffffff;  White background 
+    background-color: #ffffff;  White background
     color: #333333;  Dark text color
 }
 a{
     color:white
 
-.navbar { 
+.navbar {
     background-color: #3498db;
 }
 
