@@ -1,27 +1,39 @@
-# Projet
+# Prise de rendez-vous
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.10.
+## Description
 
-## Development server
+Le projet est une application front-end développée avec Angular. Ce projet vise à fournir une solution pour les patients pour prendre des rendez-vous en ligne et pour les médécins pour le suivi de leurs rendez-vous.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Prérequis
 
-## Code scaffolding
+Avant de commencer, assurez-vous d'avoir installé les éléments suivants sur votre machine :
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- [Node.js](https://nodejs.org/) (version recommandée)
+- [npm](https://www.npmjs.com/) (installé avec Node.js)
+- [Angular CLI](https://cli.angular.io/)
 
-## Build
+## Installation
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Après avoir installer le projet, assurez vous d'avoir installer:
+ 1. les dépendances nécessaires :
+    npm install
+ 2. npm i ng2-search-filter
+ 3. ng add @angular/material
+ 4. npm install -g json-server
+ 5. json-server --watch doctor-codes.json
 
-## Running unit tests
+## Exécution
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Suivez ces étapes pour exécuter le projet localement :
 
-## Running end-to-end tests
+1. Lancez l'application en mode développement :
+    ng serve
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+2. Ouvrez un navigateur web et accédez à l'URL suivante :
+    http://localhost:4200
 
-## Further help
+Si vous souhaitez contribuer à ce projet, veuillez consulter le fichier [CONTRIBUTING.md](CONTRIBUTING.md).
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Licence
+
+Ce projet est sous licence [Nom de la licence]. Consultez le fichier [LICENSE.md](LICENSE.md) pour plus d'informations.
