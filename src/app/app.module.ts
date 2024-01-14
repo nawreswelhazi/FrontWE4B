@@ -17,7 +17,6 @@ import { ProfileMedecinComponent } from './profile-medecin/profile-medecin.compo
 import { ModifierPatientComponent } from './modifier-patient/modifier-patient.component';
 import { ModifierMedecinComponent } from './modifier-medecin/modifier-medecin.component';
 import { IonicModule } from '@ionic/angular';
-import { NavbarPagesComponent } from './navbar-pages/navbar-pages.component';
 import { ListeMedecinsComponent } from './liste-medecins/liste-medecins.component';
 import { PrendreRDVComponent } from './prendre-rdv/prendre-rdv.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -41,7 +40,6 @@ import { MesRDVComponent } from './mes-rdv/mes-rdv.component';
     ProfileMedecinComponent,
     ModifierPatientComponent,
     ModifierMedecinComponent,
-    NavbarPagesComponent,
     ListeMedecinsComponent,
     PrendreRDVComponent,
     MesRDVComponent
@@ -55,7 +53,7 @@ import { MesRDVComponent } from './mes-rdv/mes-rdv.component';
     HttpClientModule,
     BrowserAnimationsModule,
     MatSnackBarModule,
-    Ng2SearchPipeModule 
+    Ng2SearchPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
